@@ -1,0 +1,9 @@
+/* ./src/index.css */
+.bg-zhili{
+    background-color: #003462;
+}
+
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
