@@ -14,7 +14,7 @@
         </div>
       </div>
       <hr>
-      <div class="relative mx-3 sm:mx-auto sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
+      <div class="relative px-6 mx-auto sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
         <div class="py-10">
           <img class="w-auto h-20 items-center" src="icon.svg"/>
         </div>
@@ -29,13 +29,13 @@
         </a>
       </div>
     </header>
-    <div class="relative mx-3 sm:mx-auto sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
+    <div class="relative px-6 sm:mx-auto sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
       <section class="h-screen" id="zhili">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-purple-600 mb-8">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-green-600 mb-8">
           <font-awesome-icon icon="address-book" size="2x" style="color: white;"/>
         </div>
-        <h2 class="mb-2 sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600">
-          执着，理想
+        <h2 class="mb-2 sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-green-600">
+          「执着，理想」
         </h2>
         <h1 class="text-3xl lg:text-5xl leading-3 font-bold mb-8">
           永远热情
@@ -46,77 +46,78 @@
           我们拥有成熟的教学研发团队与经验丰富的一线教师，我们将全部资源投入到优质的计算机教育课程开发中，并且在落地项目中取得了优异的成绩。
         </p>
 
-        <div class="relative py-3 sm:max-h-xl sm:mx-auto">
-          <div class="relative grid grid-rows-3 grid-flow-row sm:grid-flow-col gap-4 ">
-            <div class="row-span-3 relative flex flex-col justify-center ">
-              <div class="absolute inset-0 bg-blue-500 shadow-2xl transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-              <div class="relative m-4 px-4 py-10 bg-white shadow-lg rounded-3xl">
-                <h1 class="text-3xl font-bold"> 您的焦虑： </h1>
-                <ul>
-                  <li><font-awesome-icon icon="times" size="2x" style="color: red; "/>老师不会教学。</li>
-                  <li><font-awesome-icon icon="times" size="2x" style="color: red;"/>没有教学资源。</li>
-                  <li><font-awesome-icon icon="times" size="2x" style="color: red;"/>没有课程体系。</li>
-                  <li><font-awesome-icon icon="times" size="2x" style="color: red;"/>课程质量不高。</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-span-2 bg-pink-400">执理能帮你解决：</div>
-            <div class="row-span-2 col-span-2 bg-pink-400">3</div>
-          </div>
-          <!--
-          <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-            <div class="max-w-md mx-auto">
-              <div class="divide-y divide-gray-200">
-                <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                  <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-                  <ul class="list-disc space-y-2">
-                    <li class="flex items-start">
-                <span class="h-6 flex items-center sm:h-7">
-                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-                      <p class="ml-2">
-                        Customizing your
-                        <code class="text-sm font-bold text-gray-900">tailwind.config.js</code> file
-                      </p>
-                    </li>
-                    <li class="flex items-start">
-                <span class="h-6 flex items-center sm:h-7">
-                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-                      <p class="ml-2">
-                        Extracting classes with
-                        <code class="text-sm font-bold text-gray-900">@apply</code>
-                      </p>
-                    </li>
-                    <li class="flex items-start">
-                <span class="h-6 flex items-center sm:h-7">
-                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-                      <p class="ml-2">Code completion with instant preview</p>
-                    </li>
-                  </ul>
-                  <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
-                </div>
-                <div class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
-                  <p>Want to dig deeper into Tailwind?</p>
-                  <p>
-                    <a href="https://tailwindcss.com/docs" class="text-cyan-600 hover:text-cyan-700"> Read the docs &rarr; </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          -->
-        </div>
+        <div class="relative py-3 sm:mx-auto">
+          <div class="relative grid grid-rows-3 grid-flow-col gap-4">
 
+            <div class="relative row-span-3">
+              <div class="w-auto bg-gradient-to-bl from-purple-600 to-purple-400 shadow-lg rounded-3xl">
+              <h1 class="p-4 text-3xl text-center font-bold text-white"> 您的焦虑 </h1>
+                <div class="grid grid-flow-col grid-rows-4 grid-cols-1 gap-4">
+                  <div class="bg-white m-2 rounded-xl shadow-md text-lg sm:text-2xl text-center font-semibold">
+                    <font-awesome-icon icon="times" style="color: red; "/>老师不会教学
+                  </div>
+                  <div class="bg-white m-2 rounded-xl shadow-md text-lg sm:text-2xl text-center font-semibold">
+                    <font-awesome-icon icon="times" style="color: red;"/>没有教学资源
+                  </div>
+                  <div class="bg-white m-2 rounded-xl shadow-md text-lg sm:text-2xl text-center font-semibold">
+                    <font-awesome-icon icon="times" style="color: red;"/>没有课程体系
+                  </div>
+                  <div class="bg-white m-2 rounded-xl shadow-md text-lg sm:text-2xl text-center font-semibold">
+                    <font-awesome-icon icon="times" style="color: red;"/>课程质量不高
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative row-span-2 col-span-2">
+              <div class="absolute inset-0 bg-gradient-to-l from-green-500 to-green-600  shadow-2xl transform -skew-y-3 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+              <div class="bg-gray-50 relative shadow-lg rounded-3xl">
+              <h1 class="p-4 text-3xl align-middle font-bold"> 执理帮您解决： </h1>
+              <div class="p-4 grid grid-flow-col grid-rows-4 grid-cols-1 gap-4">
+                  <div class="bg-white p-2 rounded-xl shadow-md text-lg sm:text-2xl font-semibold">
+                    <font-awesome-icon icon="check-square" style="color: green; "/>执理拥有一线的专业教师
+                  </div>
+                  <div class="bg-white p-2 rounded-xl shadow-md text-lg sm:text-2xl font-semibold">
+                    <font-awesome-icon icon="check-square" style="color: green;"/>执理积累了大量的教学资源
+                  </div>
+                  <div class="bg-white p-2 rounded-xl shadow-md text-lg sm:text-2xl font-semibold">
+                    <font-awesome-icon icon="check-square" style="color: green;"/>执理根据名师积累的经验，开发出了一套成熟课程体系
+                  </div>
+                  <div class="bg-white p-2 rounded-xl shadow-md text-lg sm:text-2xl font-semibold">
+                    <font-awesome-icon icon="check-square" style="color: green;"/>执理名师+执理资源+执理课程体系=完美的教学效果
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="h-screen" id="FKIR">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-pink-600 mb-8">
+          <font-awesome-icon icon="graduation-cap" size="2x" style="color: white;"/>
+        </div>
+        <h2 class="mb-2 sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-pink-600">
+          「专业，亲和」
+        </h2>
+        <h1 class="text-3xl lg:text-5xl leading-3 font-bold mb-8">
+          原来这个知识点，没那么难啊！！！！！
+        </h1>
+        <p class="text-gray-500 max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6 mb-6">
+          执理一直在思考，究竟怎么样的一节课，才能被称作“一节优质的课程”。
+          <br>
+          经过执理教研组的
+        </p>
+
+        <div class="relative py-3 sm:mx-auto">
+          <div class="relative grid grid-rows-3 grid-flow-col gap-4">
+
+          </div>
+        </div>
       </section>
     </div>
+
   </div>
 </template>
 
