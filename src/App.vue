@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <Main/>
+    <Header/>
+    <div class="px-6 sm:mx-auto sm:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl">
+      <router-view/>
+    </div>
     <Footer/>
   </div>
 </template>
 
 <script>
-import Main from './components/index';
-import Footer from './components/footer';
+import Footer from "./components/footer.vue";
+import Header from "./components/header.vue";
+
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    Main,
-    Footer
+    Footer,
+    Header
   }
 }
 </script>
-
-<style>
-</style>
