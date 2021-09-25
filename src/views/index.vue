@@ -62,16 +62,16 @@
               <h1 class="p-4 text-2xl sm:text-3xl align-middle font-bold text-white"> 执理帮您解决： </h1>
               <div class="p-4 grid grid-flow-col grid-rows-4 grid-cols-1 gap-4">
                 <div class="bg-white p-2 rounded-xl shadow-md sm:text-2xl font-semibold">
-                  <font-awesome-icon icon="check-square" style="color: green; "/>执理拥有一线的专业教师
+                  <font-awesome-icon icon="check-square" style="color: green; "/>&nbsp;执理拥有一线的专业教师
                 </div>
                 <div class="bg-white p-2 rounded-xl shadow-md sm:text-2xl font-semibold">
-                  <font-awesome-icon icon="check-square" style="color: green;"/>执理积累了大量的教学资源
+                  <font-awesome-icon icon="check-square" style="color: green;"/>&nbsp;执理积累了大量的教学资源
                 </div>
                 <div class="bg-white p-2 rounded-xl shadow-md sm:text-2xl font-semibold">
-                  <font-awesome-icon icon="check-square" style="color: green;"/>执理根据名师积累的经验，开发出了一套成熟课程体系
+                  <font-awesome-icon icon="check-square" style="color: green;"/>&nbsp;执理根据名师积累的经验，开发出了一套成熟课程体系
                 </div>
                 <div class="bg-white p-2 rounded-xl shadow-md sm:text-2xl font-semibold">
-                  <font-awesome-icon icon="check-square" style="color: green;"/>执理名师+执理资源+执理课程体系=完美的教学效果
+                  <font-awesome-icon icon="check-square" style="color: green;"/>&nbsp;执理名师&nbsp;+&nbsp;执理资源&nbsp;+&nbsp;执理课程体系&nbsp;=&nbsp;完美的教学效果
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@
       <div class="container flex flex-wrap justify-center mx-auto text-coolGray-600">
         <div v-for="(item) in partners" v-bind:key="item.id" class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
           <div v-if="item.url !== null">
-            <img class="fill-current" :src="item.url" />
+            <img class="fill-current max-h-16" :src="item.url" />
           </div>
           <div v-else>
             <h1 class="text-black font-bold text-2xl text-current">
@@ -232,39 +232,51 @@ export default {
       teacherMember: [
         {
           id: 1,
-          name: "董老师",
-          school: "北京邮电大学",
-          awards: "曾获得NOI铜牌、CTSC铜牌、WC铜牌等竞赛奖项。",
-        },
-        {
-          id: 2,
-          name: "金老师",
-          school: "北京航空航天大学",
-          awards: "金牌讲师，学生曾获得NOI铜牌、银牌不等。"
-        },
-        {
-          id: 3,
-          name: "孙老师",
-          school: "西安电子科技大学",
-          awards: "曾获得NOI铜牌、APIO铜奖等竞赛奖项。"
-        },
-        {
-          id: 4,
-          name: "杨老师",
-          school: "北京邮电大学",
-          awards: "曾获得NOI铜牌等竞赛奖项。"
-        },
-        {
-          id: 5,
           name: "刘老师",
           school: "华中师范大学",
           awards: "曾获ICPC EC-Final银牌，ICPC金牌等竞赛奖项。"
         },
         {
-          id: 6,
+          id: 2,
           name: "朱老师",
           school: "武汉大学",
           awards: "曾获ICPC金牌，银牌，NOI铜牌，APIO银牌等竞赛奖项。"
+        },
+        {
+          id: 3,
+          name: "刘老师",
+          school: "东北大学",
+          awards: "曾获ICPC银牌，NOI铜牌等竞赛奖项。"
+        },
+        {
+          id: 4,
+          name: "吴老师",
+          school: "东北大学",
+          awards: "曾获NOI银牌，CCPC铜牌等竞赛奖项。"
+        },
+        {
+          id: 5,
+          name: "孙老师",
+          school: "西安电子科技大学",
+          awards: "曾获得NOI铜牌、APIO铜奖等竞赛奖项。"
+        },
+        {
+          id: 6,
+          name: "董老师",
+          school: "北京邮电大学",
+          awards: "曾获得NOI铜牌、CTSC铜牌、WC铜牌等竞赛奖项。",
+        },
+        {
+          id: 7,
+          name: "杨老师",
+          school: "北京邮电大学",
+          awards: "曾获得NOI铜牌等竞赛奖项。"
+        },
+        {
+          id: 8,
+          name: "金老师",
+          school: "北京航空航天大学",
+          awards: "金牌讲师，学生曾获得NOI铜牌、银牌不等。"
         },
       ],
       partners: [
@@ -290,18 +302,18 @@ export default {
         },
         {
           id : 6,
-          url : null,
+          url : "img/jikechenxing.png",
           txt : "极客晨星"
         },
         {
           id : 7,
-          url : null,
+          url : "img/benbu2.jpeg",
           txt : "蚌埠二中"
         },
         {
           id : 8,
-          url : null,
-          txt : "萝卜伙伴"
+          url : "img/fuzhou32.jpeg",
+          txt : "福州32中"
         },
       ]
     }

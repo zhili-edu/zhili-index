@@ -4,14 +4,14 @@
 			<div class="grid grid-cols-12">
 				<div class="pb-6 col-span-full md:pb-0 md:col-span-6">
 					<router-link to="/" class="flex justify-center space-x-3 md:justify-start">
-						<span class="self-center text-2xl font-semibold">北京执理教育科技公司</span>
+						<span class="self-center text-2xl font-semibold">执理教育科技</span>
 					</router-link>
 				</div>
 				<div class="col-span-6 text-center md:text-left md:col-span-3">
 					<p class="pb-1 text-lg font-medium">执理应用</p>
 					<ul>
 						<li>
-							<a href="" class="hover:text-violet-600">执理OnlineJudge</a>
+							<a href="http://oj.zhili-edu.com" class="hover:text-violet-600">执理OnlineJudge</a>
 						</li>
 						<li>
 							<a href="" class="hover:text-violet-600">执理课程学习中心</a>
