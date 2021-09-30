@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt',
+    title: '执理 - 共创计算机教育新未来',
     htmlAttrs: {
       lang: 'en'
     },
