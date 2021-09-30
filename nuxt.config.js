@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 
 export default {
+  target: 'static',
   srcDir: 'src/',
 
   // auto import components
