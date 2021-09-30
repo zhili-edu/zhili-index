@@ -1,0 +1,23 @@
+[
+  {
+    "name": "course",
+    "path": "/course",
+    "component": "/Users/c0per/zhili/zhili-index/src/pages/course.vue",
+    "chunkName": "pages/course",
+    "_name": "_219ebcde"
+  },
+  {
+    "name": "pjCourse",
+    "path": "/pjCourse",
+    "component": "/Users/c0per/zhili/zhili-index/src/pages/pjCourse.vue",
+    "chunkName": "pages/pjCourse",
+    "_name": "_3bcd88aa"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/c0per/zhili/zhili-index/src/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_254f8a4c"
+  }
+]
