@@ -33,8 +33,8 @@
 			<div class="grid justify-center pt-6 lg:justify-between">
 				<div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
 					<span>©2021 zhili-edu. All rights reserved</span>
-                    <span>京ICP备2021029169号</span>
                     <div style="width:300px;margin:0 auto; padding:20px 0;">
+                        <a href="https://beian.miit.gov.cn/#/Integrated/index">京ICP备2021029169号</a>
                         <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13030202003280" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">冀公网安备 13030202003280号</p></a>
                     </div>
 				</div>
