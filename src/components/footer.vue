@@ -39,7 +39,7 @@
                     </div>
 				</div>
 				<div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
-					<a href="wahacercn@gmail.com" title="Email" class="flex items-center justify-center w-10 h-10 rounded-full bg-violet-600 text-coolGray-50">
+					<a href="mailto:contact@zhili-edu.com" title="Email" class="flex items-center justify-center w-10 h-10 rounded-full bg-violet-600 text-coolGray-50">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
 							<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
 							<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
