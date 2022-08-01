@@ -5,9 +5,13 @@ node_modules
 # Nuxt files
 .nuxt
 
+# Tencent Cloud coscli log file
+coscli.log
+
 # local env files
 .env.local
 .env.*.local
+cos.yaml
 
 # Log files
 npm-debug.log*
