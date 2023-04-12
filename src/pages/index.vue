@@ -286,32 +286,28 @@ export default {
         },
         {
           id : 2,
-          url : "/img/qingsong.png"
-        },
-        {
-          id : 3,
           url : "/img/mathar.png"
         },
         {
-          id : 4,
+          id : 3,
           url : "/img/saikr.png"
         },
         {
-          id : 5,
+          id : 4,
           url : "/img/yxd.png"
         },
         {
-          id : 6,
+          id : 5,
           url : "/img/jikechenxing.png",
           txt : "极客晨星"
         },
         {
-          id : 7,
+          id : 6,
           url : "/img/benbu2.jpeg",
           txt : "蚌埠二中"
         },
         {
-          id : 8,
+          id : 7,
           url : "/img/fuzhou32.jpeg",
           txt : "福州32中"
         },
