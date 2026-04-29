@@ -30,6 +30,25 @@ function CardList({ items }: { items: typeof solutions }) {
   );
 }
 
+function SolutionsBento() {
+  return (
+    <div className={styles.solutionsBento}>
+      {solutions.map((item, index) => (
+        <article className={styles.solutionCard} key={item.title}>
+          <span className={styles.cardNumber}>{String(index + 1).padStart(2, "0")}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <ul className={styles.tagList}>
+            {item.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export default function HomeSections() {
   return (
     <AppShell>
@@ -93,12 +112,12 @@ export default function HomeSections() {
         </ul>
       </section>
 
-      <section className={styles.section} aria-labelledby="solutions-title">
+      <section className={styles.section} aria-labelledby="solutions-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="solutions-title">四大解决方案</h2>
           <p>围绕 K-12、职教、区域教育和科技研学，形成平台、内容、师资与运营一体化服务。</p>
         </div>
-        <CardList items={solutions} />
+        <SolutionsBento />
       </section>
 
       <section className={styles.section} aria-labelledby="products-title">

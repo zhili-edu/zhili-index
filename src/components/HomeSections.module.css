@@ -316,6 +316,71 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.solutionsBento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.solutionCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  padding: var(--space-7);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.solutionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.solutionCard:nth-child(1) {
+  grid-column: span 2;
+}
+
+.solutionCard h3 {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.2;
+}
+
+.solutionCard p {
+  flex: 1;
+  margin: 0 0 var(--space-6);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.cardNumber {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tagList li {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  background: var(--color-surface-soft);
+  font-size: 0.875rem;
+}
+
 .card {
   min-height: 19rem;
   padding: 1.6rem;
@@ -434,6 +499,7 @@
 
   .metrics,
   .grid,
+  .solutionsBento,
   .partnerGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -451,7 +517,12 @@
 
   .metrics,
   .grid,
+  .solutionsBento,
   .partnerGrid {
     grid-template-columns: 1fr;
+  }
+
+  .solutionCard:nth-child(1) {
+    grid-column: span 1;
   }
 }

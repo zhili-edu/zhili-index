@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import HomeSections from "./HomeSections";
@@ -29,6 +29,10 @@ describe("HomeSections", () => {
     expect(screen.getByText("Physical Implementation")).toBeInTheDocument();
     expect(screen.getByText("2021")).toBeInTheDocument();
     expect(screen.getByText("7 项")).toBeInTheDocument();
+    const solutionsSection = screen.getByRole("region", { name: "四大解决方案" });
+    expect(solutionsSection).toBeInTheDocument();
+    expect(within(solutionsSection).getAllByRole("article")).toHaveLength(4);
+    expect(within(solutionsSection).getByText("C++ / CSP-J / GESP 课程体系")).toBeInTheDocument();
     expect(screen.getAllByText("职教 AIGC 实训平台").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
     expect(screen.getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();
