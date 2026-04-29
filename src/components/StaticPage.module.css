@@ -1,0 +1,211 @@
+.page {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0 6rem;
+}
+
+.hero {
+  max-width: 820px;
+  margin-bottom: 3rem;
+}
+
+.hero p:first-child {
+  display: inline-flex;
+  margin: 0 0 1rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 16%, transparent);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  background: var(--color-surface-soft);
+  letter-spacing: 0.16em;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.hero p:last-child {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card h2,
+.card h3 {
+  margin: 0 0 0.85rem;
+  color: var(--color-text);
+}
+
+.card p,
+.card li {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.card ul {
+  padding-left: 1.2rem;
+}
+
+.featureBlock {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2rem;
+  margin-top: 1.25rem;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.featureBlock::after {
+  content: "";
+  position: absolute;
+  right: -6rem;
+  top: -6rem;
+  width: 17rem;
+  height: 17rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  filter: blur(18px);
+}
+
+.featureBlock h2 {
+  margin: 0 0 1rem;
+  color: var(--color-text);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.featureBlock p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.kicker {
+  margin: 0 0 0.8rem;
+  color: var(--color-accent) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.unitGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.unitCard {
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  position: relative;
+  z-index: 1;
+}
+
+.unitCard span {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.unitCard h3 {
+  margin: 0.6rem 0;
+  color: var(--color-text);
+}
+
+.unitCard p {
+  margin: 0;
+}
+
+.partnerGroups {
+  display: grid;
+  gap: 1rem;
+}
+
+.partnerGroup {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.partnerGroup:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.partnerGroup h2 {
+  margin: 0 0 0.75rem;
+  color: var(--color-text);
+}
+
+.partnerGroup p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.partnerGroup ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partnerGroup li {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  background: var(--color-surface-soft);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .grid,
+  .featureBlock,
+  .unitGrid,
+  .partnerGroup,
+  .partnerGroup ul {
+    grid-template-columns: 1fr;
+  }
+}
