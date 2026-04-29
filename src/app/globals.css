@@ -1,0 +1,58 @@
+:root {
+  --color-bg: #fbfbfd;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f5f5f7;
+  --color-skeleton: #f0f0f2;
+  --color-text: #1d1d1f;
+  --color-text-muted: #86868b;
+  --color-accent: #0066cc;
+  --color-accent-hover: #0057b8;
+  --color-footer: #1d1d1f;
+  --color-footer-alt: #102033;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.06);
+  --shadow-panel: 0 32px 80px rgba(0, 0, 0, 0.08);
+  --radius-sm: 24px;
+  --radius-md: 32px;
+  --radius-lg: 40px;
+  --radius-pill: 999px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-section: clamp(7.5rem, 12vw, 10rem);
+  --container: 1180px;
+  --transition: 220ms ease;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
