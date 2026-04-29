@@ -7,18 +7,16 @@ describe("HomeSections", () => {
   it("renders official navigation and homepage content from the content model", () => {
     render(<HomeSections />);
 
-    expect(screen.getByLabelText("执理教育科技首页")).toHaveAttribute("href", "/");
+    expect(screen.getByLabelText("北京执理教育科技有限公司首页")).toHaveAttribute("href", "/");
+    expect(screen.getByText("北京执理教育科技有限公司")).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: "官网导航" })).toBeInTheDocument();
-    expect(
-      screen
-        .getAllByRole("link", { name: "联系合作" })
-        .some((link) => link.getAttribute("href") === "/contact"),
-    ).toBe(true);
+    expect(screen.queryByRole("link", { name: "联系我们" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "产品与平台" })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "解决方案" })).toHaveAttribute(
       "href",
       "/solutions",
     );
-    expect(screen.getByText("K-12 信息学奥赛与人工智能教育")).toBeInTheDocument();
+    expect(screen.getByText("教育数字化解决方案")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "了解解决方案" })).toHaveAttribute(
       "href",
       "/solutions",
@@ -27,40 +25,73 @@ describe("HomeSections", () => {
       "href",
       "/cases",
     );
-    expect(screen.getByRole("heading", { name: "AI 教育能力系统" })).toBeInTheDocument();
-    expect(screen.getByText("平台 × 内容 × 运营")).toBeInTheDocument();
-    expect(screen.getByText("Digital Capabilities")).toBeInTheDocument();
-    expect(screen.getByText("Physical Implementation")).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "平台 + 课程 + 运营" })).not.toBeInTheDocument();
+    expect(screen.queryByText("校内外协同服务体系")).not.toBeInTheDocument();
+    expect(screen.queryByText("Digital Platform")).not.toBeInTheDocument();
+    expect(screen.queryByText("Program Operations")).not.toBeInTheDocument();
+    expect(screen.queryByText("Zhili AI Stack")).not.toBeInTheDocument();
     expect(screen.getByText("2021")).toBeInTheDocument();
     expect(screen.getByText("7 项")).toBeInTheDocument();
+    expect(screen.queryByText(/更加规范、高效、开放的青少年教育服务生态/)).not.toBeInTheDocument();
     const solutionsSection = screen.getByRole("region", { name: "四大解决方案" });
     expect(solutionsSection).toBeInTheDocument();
+    expect(
+      within(solutionsSection).getByText(/围绕滨海新区校外教育平台建设/).className,
+    ).toContain("featuredSolutionDescription");
     expect(within(solutionsSection).getAllByRole("article")).toHaveLength(4);
-    expect(within(solutionsSection).getByText("C++ / CSP-J / GESP 课程体系")).toBeInTheDocument();
-    expect(screen.getAllByText("职教 AIGC 实训平台").length).toBeGreaterThanOrEqual(1);
-    const productsSection = screen.getByRole("region", { name: "产品与平台" });
-    expect(within(productsSection).getAllByRole("article")).toHaveLength(4);
-    expect(within(productsSection).getByText("Online Judge")).toBeInTheDocument();
-    expect(within(productsSection).getByText("文旅智慧运营中台")).toBeInTheDocument();
+    expect(within(solutionsSection).getByText("滨海新区校外教育平台")).toBeInTheDocument();
+    expect(screen.getAllByText("课后服务数字化平台").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText("青少年宫教务平台")).toBeInTheDocument();
+    expect(screen.getByText("AIGC 教育教学平台")).toBeInTheDocument();
+    expect(within(solutionsSection).getByText(/文旅研学平台研途有答案/)).toBeInTheDocument();
+    expect(within(solutionsSection).getByText("研途有答案")).toBeInTheDocument();
+    expect(within(solutionsSection).getByText("收缴费")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "青少年素质教育数字化区域服务商" })).toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "产品与平台" })).not.toBeInTheDocument();
+    expect(screen.queryByText("课后服务教育平台")).not.toBeInTheDocument();
+    expect(screen.queryByText("双业务多租户监管平台")).not.toBeInTheDocument();
+    expect(screen.queryByText("文旅票务中台")).not.toBeInTheDocument();
     const casesSection = screen.getByRole("region", { name: "案例成果" });
     expect(within(casesSection).getAllByRole("article")).toHaveLength(6);
-    expect(within(casesSection).getByText("职校")).toBeInTheDocument();
-    expect(within(casesSection).getByText("码头文旅数字化运营")).toBeInTheDocument();
+    expect(within(casesSection).getByText("信息学奥赛教材出版")).toBeInTheDocument();
+    expect(within(casesSection).getByText("区本课程研发建设")).toBeInTheDocument();
+    expect(within(casesSection).getByText(/联合泰达一中建设校本课程/)).toBeInTheDocument();
+    expect(within(casesSection).getByText("教育培训机构运营")).toBeInTheDocument();
+    expect(within(casesSection).getByText(/生态城社工部/)).toBeInTheDocument();
+    expect(within(casesSection).getByText(/博雅社区促进服务中心/)).toBeInTheDocument();
+    expect(within(casesSection).getByText(/三个社区闲置场地/)).toBeInTheDocument();
+    expect(within(casesSection).getByText("文旅票务与渠道整合")).toBeInTheDocument();
+    expect(within(casesSection).getByText("民生平台监理项目")).toBeInTheDocument();
+    expect(within(casesSection).getByText("小城建 AIGC 平台")).toBeInTheDocument();
+    expect(within(casesSection).getAllByRole("img")).toHaveLength(6);
+    expect(within(casesSection).getByRole("img", { name: /文旅票务与渠道整合/ })).toHaveAttribute(
+      "src",
+      expect.stringContaining("case-tourism-ticketing.png"),
+    );
+    expect(within(casesSection).queryByText("区域智慧教育平台建设")).not.toBeInTheDocument();
+    expect(within(casesSection).queryByText("区域智慧教育与研学平台")).not.toBeInTheDocument();
 
     const partnersSection = screen.getByRole("region", { name: "合作伙伴" });
-    expect(within(partnersSection).getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();
-    expect(within(partnersSection).getByText("天津大学教育学院")).toBeInTheDocument();
-    expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
+    const homepagePartners = within(partnersSection).getAllByText(/天津/);
+    expect(homepagePartners[0]).toHaveTextContent("天津市天河计算机技术有限公司");
+    expect(homepagePartners[1]).toHaveTextContent("天津滨海文化旅游发展有限公司");
+    expect(within(partnersSection).queryByText("天津市滨海新区滨旅游船码头发展有限公司")).not.toBeInTheDocument();
+    expect(within(partnersSection).getByText("天津滨海教育发展集团有限公司")).toBeInTheDocument();
+    expect(within(partnersSection).getByText("天津滨海民生发展有限公司")).toBeInTheDocument();
+    expect(screen.queryByText("课后服务教育平台")).not.toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "技术能力" })).not.toBeInTheDocument();
+    expect(screen.queryByText("系统建设能力")).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "关于执理" })).toBeInTheDocument();
-    expect(screen.getByText(/团队起步于 2019 年/)).toBeInTheDocument();
+    expect(screen.getByText(/执理教育聚焦青少年科技教育/)).toBeInTheDocument();
     expect(screen.getByText(/教育 \+ 科技/)).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: "让业务结构更清晰，让项目落地更高效" }),
+      screen.getByRole("heading", { name: "让业务结构更清晰让项目落地更高效" }),
     ).toBeInTheDocument();
-    expect(
-      screen
-        .getAllByRole("link", { name: "联系合作" })
-        .some((link) => link.getAttribute("href") === "/contact"),
-    ).toBe(true);
+    expect(screen.getByText("让业务结构更清晰")).toBeInTheDocument();
+    expect(screen.getByText("让项目落地更高效")).toBeInTheDocument();
+    expect(screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/contact"))
+      .toBe(true);
+    expect(screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/products"))
+      .toBe(true);
   });
 });

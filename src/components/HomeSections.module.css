@@ -2,10 +2,7 @@
   width: min(var(--container), calc(100% - var(--space-6)));
   margin: 0 auto;
   padding: clamp(6rem, 10vw, 9rem) 0 var(--space-section);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.52fr);
-  gap: var(--space-8);
-  align-items: center;
+  display: block;
 }
 
 .heroCopy {
@@ -39,17 +36,23 @@
 }
 
 .title {
-  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1320px;
   margin: 0;
   color: var(--color-text);
-  font-size: clamp(3.8rem, 8vw, 7rem);
+  font-size: clamp(3.4rem, 5.7vw, 5.7rem);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.055em;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.title span {
+  white-space: nowrap;
 }
 
 .subtitle {
-  max-width: 480px;
+  max-width: 680px;
   margin: 1.75rem 0 0;
   color: var(--color-text-muted);
   font-size: clamp(1.1rem, 2vw, 1.45rem);
@@ -61,117 +64,6 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2.25rem;
-}
-
-.heroSystem {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  padding: var(--space-8) var(--space-6);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 16rem),
-    color-mix(in srgb, var(--color-surface) 60%, transparent);
-  box-shadow: var(--shadow-panel);
-  backdrop-filter: blur(20px);
-}
-
-.systemHalo {
-  position: absolute;
-  inset: 12% 10% auto auto;
-  width: 12rem;
-  height: 12rem;
-  border-radius: var(--radius-pill);
-  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  filter: blur(44px);
-  pointer-events: none;
-}
-
-.systemTopline,
-.systemFooter {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--color-text-muted);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.systemTopline strong {
-  color: var(--color-accent);
-}
-
-.heroSystem h2 {
-  position: relative;
-  z-index: 1;
-  margin: var(--space-5) 0 0;
-  color: var(--color-text);
-  font-size: clamp(1.9rem, 3vw, 3.1rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
-}
-
-.heroSystem p {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
-.architectureMap {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  margin: var(--space-4) 0;
-}
-
-.architectureMap div {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding: var(--space-5);
-  border-radius: calc(var(--radius-lg) * 0.55);
-  background: color-mix(in srgb, var(--color-surface) 58%, transparent);
-}
-
-.architectureMap span {
-  color: var(--color-text-muted);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.architectureMap strong {
-  color: var(--color-text);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.45;
-}
-
-.architectureMap i {
-  display: block;
-  width: 1px;
-  height: 2.5rem;
-  margin: calc(var(--space-2) * -1) auto;
-  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-accent) 36%, transparent), transparent);
-}
-
-.systemFooter {
-  margin-top: auto;
-  padding-top: var(--space-4);
-  border-top: 1px solid color-mix(in srgb, var(--color-text) 6%, transparent);
-  letter-spacing: 0;
-  text-transform: none;
 }
 
 .primary,
@@ -245,7 +137,7 @@
 }
 
 .sectionHeader p {
-  max-width: 600px;
+  max-width: 980px;
   margin: 0;
   color: var(--color-text-muted);
   font-size: 1.125rem;
@@ -308,7 +200,7 @@
 
 .solutionsBento {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-5);
 }
 
@@ -330,14 +222,15 @@
 }
 
 .solutionCard:nth-child(1) {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .solutionCard h3 {
   margin: 0 0 var(--space-4);
   color: var(--color-text);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .solutionCard p {
@@ -345,6 +238,10 @@
   margin: 0 0 var(--space-6);
   color: var(--color-text-muted);
   line-height: 1.75;
+}
+
+.solutionCard .featuredSolutionDescription {
+  white-space: nowrap;
 }
 
 .cardNumber {
@@ -371,84 +268,36 @@
   font-size: 0.875rem;
 }
 
-.productsGrid {
+.technologyGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
 }
 
-.productCard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-  overflow: hidden;
-  border: 0;
+.technologyCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 18rem;
+  padding: var(--space-7);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 94%, transparent), var(--color-surface)),
+    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 14rem);
   box-shadow: var(--shadow-card);
 }
 
-.productCopy {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-6);
-}
-
-.productCopy h3 {
+.technologyCard h3 {
   margin: 0 0 var(--space-4);
   color: var(--color-text);
-  font-size: 1.45rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  letter-spacing: -0.03em;
 }
 
-.productCopy p {
+.technologyCard p {
   flex: 1;
   margin: 0 0 var(--space-6);
   color: var(--color-text-muted);
-  line-height: 1.75;
-}
-
-.productMockup {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin: var(--space-5) var(--space-5) calc(var(--space-5) * -1) 0;
-  padding: var(--space-4);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--color-accent) 4%, transparent);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.productMockup span,
-.productMockup i {
-  display: block;
-  border-radius: var(--radius-pill);
-  background: var(--color-skeleton);
-}
-
-.productMockup span {
-  width: 70%;
-  height: 0.7rem;
-}
-
-.productMockup strong {
-  display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
-  place-items: center;
-  border-radius: var(--radius-sm);
-  color: var(--color-accent);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-  font-size: 1rem;
-}
-
-.productMockup i {
-  height: 2.75rem;
-}
-
-.productMockup i:last-child {
-  width: 76%;
+  line-height: 1.8;
 }
 
 .casesGrid {
@@ -470,13 +319,23 @@
 }
 
 .caseImage {
-  min-height: 200px;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  object-fit: cover;
   background: linear-gradient(to bottom, var(--color-skeleton), color-mix(in srgb, var(--color-skeleton) 84%, var(--color-text-muted)));
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+.caseCard:hover .caseImage {
+  transform: scale(1.025);
+  filter: saturate(1.05) contrast(1.02);
 }
 
 .caseLabel {
   position: absolute;
-  top: 170px;
+  top: clamp(8.5rem, 13vw, 10rem);
   left: var(--space-4);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
@@ -588,9 +447,13 @@
 }
 
 .cta h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
   margin: 0;
   color: var(--color-surface);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.3rem, 4.8vw, 4.25rem);
+  line-height: 1.04;
   letter-spacing: -0.04em;
 }
 
@@ -640,10 +503,14 @@
 
   .metrics,
   .solutionsBento,
-  .productsGrid,
+  .technologyGrid,
   .casesGrid,
   .partnerGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solutionCard:nth-child(1) {
+    grid-column: span 2;
   }
 
   .sectionHeader {
@@ -652,13 +519,10 @@
     text-align: left;
   }
 
-  .productCard {
-    grid-template-columns: 1fr;
+  .solutionCard h3 {
+    white-space: normal;
   }
 
-  .productMockup {
-    margin: 0 var(--space-5) calc(var(--space-5) * -1);
-  }
 }
 
 @media (max-width: 620px) {
@@ -691,18 +555,10 @@
 
   .metrics,
   .solutionsBento,
-  .productsGrid,
+  .technologyGrid,
   .casesGrid,
   .partnerGrid {
     grid-template-columns: 1fr;
-  }
-
-  .productCard {
-    grid-template-columns: 1fr;
-  }
-
-  .productMockup {
-    margin: 0 var(--space-5) calc(var(--space-5) * -1);
   }
 
   .cta {

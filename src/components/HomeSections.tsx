@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -6,7 +7,6 @@ import {
   hero,
   metrics,
   partnerGroups,
-  products,
   solutions,
 } from "../content/site";
 import AppShell from "./AppShell";
@@ -19,38 +19,14 @@ function SolutionsBento() {
         <article className={styles.solutionCard} key={item.title}>
           <span className={styles.cardNumber}>{String(index + 1).padStart(2, "0")}</span>
           <h3>{item.title}</h3>
-          <p>{item.description}</p>
+          <p className={index === 0 ? styles.featuredSolutionDescription : undefined}>
+            {item.description}
+          </p>
           <ul className={styles.tagList}>
             {item.points.map((point) => (
               <li key={point}>{point}</li>
             ))}
           </ul>
-        </article>
-      ))}
-    </div>
-  );
-}
-
-function ProductsGrid() {
-  return (
-    <div className={styles.productsGrid}>
-      {products.map((item) => (
-        <article className={styles.productCard} key={item.title}>
-          <div className={styles.productCopy}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <ul className={styles.tagList}>
-              {item.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.productMockup} aria-hidden="true">
-            <span />
-            <strong>{item.title.slice(0, 2)}</strong>
-            <i />
-            <i />
-          </div>
         </article>
       ))}
     </div>
@@ -63,7 +39,11 @@ export default function HomeSections() {
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>{hero.eyebrow}</p>
-          <h1 className={styles.title}>{hero.title}</h1>
+          <h1 className={styles.title} aria-label={hero.title.join("")}>
+            {hero.title.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h1>
           <p className={styles.subtitle}>{hero.subtitle}</p>
           <div className={styles.actions}>
             {hero.actions.map((action, index) => (
@@ -78,31 +58,6 @@ export default function HomeSections() {
             ))}
           </div>
         </div>
-        <aside className={styles.heroSystem} aria-labelledby="hero-system-title">
-          <div className={styles.systemHalo} aria-hidden="true" />
-          <div className={styles.systemTopline}>
-            <span>Zhili AI Stack</span>
-            <strong>Online</strong>
-          </div>
-          <h2 id="hero-system-title">AI 教育能力系统</h2>
-          <p>平台 × 内容 × 运营</p>
-          <div className={styles.architectureMap}>
-            <div>
-              <span>Digital Capabilities</span>
-              <strong>课程研发 / AIGC / 数据平台</strong>
-            </div>
-            <i aria-hidden="true" />
-            <div>
-              <span>Physical Implementation</span>
-              <strong>学校 / 职校 / 文旅场景</strong>
-            </div>
-          </div>
-          <div className={styles.systemFooter}>
-            <span>K-12</span>
-            <span>Vocational</span>
-            <span>Culture Travel</span>
-          </div>
-        </aside>
       </section>
 
       <section className={styles.section} aria-labelledby="metrics-title">
@@ -123,17 +78,9 @@ export default function HomeSections() {
       <section className={styles.section} aria-labelledby="solutions-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="solutions-title">四大解决方案</h2>
-          <p>围绕 K-12、职教、区域教育和科技研学，形成平台、内容、师资与运营一体化服务。</p>
+          <p>围绕区域校内外教育协同，形成平台建设、课程供给、运营支持与数据服务一体化能力。</p>
         </div>
         <SolutionsBento />
-      </section>
-
-      <section className={styles.section} aria-labelledby="products-title" role="region">
-        <div className={styles.sectionHeader}>
-          <h2 id="products-title">产品与平台</h2>
-          <p>把真实教育和场景交付沉淀为可复用的平台能力。</p>
-        </div>
-        <ProductsGrid />
       </section>
 
       <section className={styles.section} aria-labelledby="cases-title" role="region">
@@ -144,7 +91,14 @@ export default function HomeSections() {
         <div className={styles.casesGrid}>
           {cases.map((item) => (
             <article className={styles.caseCard} key={item.title}>
-              <div className={styles.caseImage} aria-hidden="true" />
+              <Image
+                className={styles.caseImage}
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                width={1600}
+                height={1000}
+                sizes="(max-width: 620px) 100vw, (max-width: 960px) 50vw, 33vw"
+              />
               <span className={styles.caseLabel}>{item.label}</span>
               <div className={styles.caseCopy}>
                 <h3>{item.title}</h3>
@@ -159,7 +113,7 @@ export default function HomeSections() {
       <section className={styles.section} aria-labelledby="partners-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="partners-title">合作伙伴</h2>
-          <p>与教育、文旅、算力、学术和出版生态伙伴协同建设 AI 时代计算机教育。</p>
+          <p>与教育集团、学校、文旅平台、算力企业、学术机构和出版生态伙伴协同建设教育科技能力。</p>
         </div>
         <div className={styles.partnerGrid}>
           {partnerGroups.flatMap((group) => group.partners).slice(0, 12).map((partner) => (
@@ -184,14 +138,17 @@ export default function HomeSections() {
 
       <section className={styles.cta} aria-labelledby="final-cta-title">
         <p className={styles.ctaEyebrow}>Ready for implementation</p>
-        <h2 id="final-cta-title">让业务结构更清晰，让项目落地更高效</h2>
-        <p>欢迎学校、职业院校、教育集团、文旅机构、产业方与投资机构联系我们。</p>
+          <h2 id="final-cta-title">
+            <span>让业务结构更清晰</span>
+            <span>让项目落地更高效</span>
+          </h2>
+        <p>欢迎学校、教育集团、公共教育场馆、文旅机构、产业方与投资机构联系我们。</p>
         <div className={styles.actions}>
-          <Link className={styles.primaryOnDark} href="/contact">
-            联系合作
-          </Link>
-          <Link className={styles.secondaryOnDark} href="/cases">
+          <Link className={styles.primaryOnDark} href="/cases">
             查看案例
+          </Link>
+          <Link className={styles.secondaryOnDark} href="/partners">
+            查看伙伴
           </Link>
         </div>
       </section>
