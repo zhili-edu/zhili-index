@@ -8,9 +8,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
       <header className={styles.nav}>
-        <Link className={styles.brand} href="/" aria-label="执理教育科技首页">
+        <Link className={styles.brand} href="/" aria-label="北京执理教育科技有限公司首页">
           <span className={styles.mark}>执</span>
-          <span>执理教育科技</span>
+          <span>北京执理教育科技有限公司</span>
         </Link>
         <nav className={styles.links} aria-label="官网导航">
           {navigation.map((item) => (
@@ -19,9 +19,6 @@ export default function AppShell({ children }: { children: ReactNode }) {
             </Link>
           ))}
         </nav>
-        <Link className={styles.navCta} href="/contact">
-          联系合作
-        </Link>
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
