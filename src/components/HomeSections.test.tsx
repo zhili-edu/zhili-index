@@ -15,8 +15,18 @@ describe("HomeSections", () => {
       "/solutions",
     );
     expect(screen.getByText("K-12 信息学奥赛与人工智能教育")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "了解解决方案" })).toHaveAttribute(
+      "href",
+      "/solutions",
+    );
+    expect(screen.getByRole("link", { name: "查看案例成果" })).toHaveAttribute(
+      "href",
+      "/cases",
+    );
     expect(screen.getByRole("heading", { name: "AI 教育能力系统" })).toBeInTheDocument();
     expect(screen.getByText("平台 × 内容 × 运营")).toBeInTheDocument();
+    expect(screen.getByText("Digital Capabilities")).toBeInTheDocument();
+    expect(screen.getByText("Physical Implementation")).toBeInTheDocument();
     expect(screen.getAllByText("职教 AIGC 实训平台").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
     expect(screen.getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();

@@ -52,25 +52,22 @@ export default function HomeSections() {
           </div>
         </div>
         <aside className={styles.heroSystem} aria-labelledby="hero-system-title">
+          <div className={styles.systemHalo} aria-hidden="true" />
           <div className={styles.systemTopline}>
             <span>Zhili AI Stack</span>
             <strong>Online</strong>
           </div>
           <h2 id="hero-system-title">AI 教育能力系统</h2>
           <p>平台 × 内容 × 运营</p>
-          <div className={styles.systemGrid}>
-            <span>课程研发</span>
-            <span>学习平台</span>
-            <span>AIGC 实训</span>
-            <span>研学交易</span>
-          </div>
-          <div className={styles.signalPanel}>
-            <span>Capability Flow</span>
-            <div className={styles.signalBars} aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i />
+          <div className={styles.architectureMap}>
+            <div>
+              <span>Digital Capabilities</span>
+              <strong>课程研发 / AIGC / 数据平台</strong>
+            </div>
+            <i aria-hidden="true" />
+            <div>
+              <span>Physical Implementation</span>
+              <strong>学校 / 职校 / 文旅场景</strong>
             </div>
           </div>
           <div className={styles.systemFooter}>
