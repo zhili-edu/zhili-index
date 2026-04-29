@@ -91,15 +91,17 @@ export default function HomeSections() {
         <div className={styles.casesGrid}>
           {cases.map((item) => (
             <article className={styles.caseCard} key={item.title}>
-              <Image
-                className={styles.caseImage}
-                src={item.imageSrc}
-                alt={item.imageAlt}
-                width={1600}
-                height={1000}
-                sizes="(max-width: 620px) 100vw, (max-width: 960px) 50vw, 33vw"
-              />
-              <span className={styles.caseLabel}>{item.label}</span>
+              <div className={styles.caseMedia}>
+                <Image
+                  className={styles.caseImage}
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  width={1600}
+                  height={1000}
+                  sizes="(max-width: 620px) 100vw, (max-width: 960px) 50vw, 33vw"
+                />
+                <span className={styles.caseLabel}>{item.label}</span>
+              </div>
               <div className={styles.caseCopy}>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>

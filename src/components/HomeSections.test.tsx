@@ -1,7 +1,10 @@
 import { render, screen, within } from "@testing-library/react";
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import HomeSections from "./HomeSections";
+
+const homeSectionsCss = readFileSync("src/components/HomeSections.module.css", "utf8");
 
 describe("HomeSections", () => {
   it("renders official navigation and homepage content from the content model", () => {
@@ -93,5 +96,14 @@ describe("HomeSections", () => {
       .toBe(true);
     expect(screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/products"))
       .toBe(true);
+  });
+
+  it("keeps homepage case images inside fixed-ratio thumbnail frames", () => {
+    render(<HomeSections />);
+
+    const casesSection = screen.getByRole("region", { name: "案例成果" });
+    expect(casesSection.querySelectorAll('[class*="_caseMedia"]')).toHaveLength(6);
+    expect(homeSectionsCss).toMatch(/\.caseMedia\s*{[\s\S]*?aspect-ratio:\s*16\s*\/\s*10;/);
+    expect(homeSectionsCss).toMatch(/\.caseImage\s*{[\s\S]*?height:\s*100%;/);
   });
 });

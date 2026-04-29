@@ -307,7 +307,6 @@
 }
 
 .caseCard {
-  position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -318,13 +317,18 @@
   box-shadow: var(--shadow-card);
 }
 
+.caseMedia {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(to bottom, var(--color-skeleton), color-mix(in srgb, var(--color-skeleton) 84%, var(--color-text-muted)));
+}
+
 .caseImage {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  min-height: 0;
+  height: 100%;
   object-fit: cover;
-  background: linear-gradient(to bottom, var(--color-skeleton), color-mix(in srgb, var(--color-skeleton) 84%, var(--color-text-muted)));
   transition: transform 420ms ease, filter 420ms ease;
 }
 
@@ -335,8 +339,9 @@
 
 .caseLabel {
   position: absolute;
-  top: clamp(8.5rem, 13vw, 10rem);
   left: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 1;
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
   color: var(--color-accent);
