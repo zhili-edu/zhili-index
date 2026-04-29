@@ -182,12 +182,18 @@ export default function HomeSections() {
         </article>
       </section>
 
-      <section className={styles.cta}>
-        <h2>共同探索 AI 时代的计算机教育与场景数字化解决方案</h2>
+      <section className={styles.cta} aria-labelledby="final-cta-title">
+        <p className={styles.ctaEyebrow}>Ready for implementation</p>
+        <h2 id="final-cta-title">让业务结构更清晰，让项目落地更高效</h2>
         <p>欢迎学校、职业院校、教育集团、文旅机构、产业方与投资机构联系我们。</p>
-        <Link className={styles.primary} href="/contact" aria-label="联系合作，提交合作意向">
-          联系合作
-        </Link>
+        <div className={styles.actions}>
+          <Link className={styles.primaryOnDark} href="/contact">
+            联系合作
+          </Link>
+          <Link className={styles.secondaryOnDark} href="/cases">
+            查看案例
+          </Link>
+        </div>
       </section>
     </AppShell>
   );

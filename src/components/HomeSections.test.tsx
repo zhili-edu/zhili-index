@@ -9,7 +9,11 @@ describe("HomeSections", () => {
 
     expect(screen.getByLabelText("执理教育科技首页")).toHaveAttribute("href", "/");
     expect(screen.getByRole("navigation", { name: "官网导航" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "联系合作" })).toHaveAttribute("href", "/contact");
+    expect(
+      screen
+        .getAllByRole("link", { name: "联系合作" })
+        .some((link) => link.getAttribute("href") === "/contact"),
+    ).toBe(true);
     expect(screen.getByRole("link", { name: "解决方案" })).toHaveAttribute(
       "href",
       "/solutions",
@@ -50,6 +54,9 @@ describe("HomeSections", () => {
     expect(screen.getByRole("heading", { name: "关于执理" })).toBeInTheDocument();
     expect(screen.getByText(/团队起步于 2019 年/)).toBeInTheDocument();
     expect(screen.getByText(/教育 \+ 科技/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "让业务结构更清晰，让项目落地更高效" }),
+    ).toBeInTheDocument();
     expect(
       screen
         .getAllByRole("link", { name: "联系合作" })
