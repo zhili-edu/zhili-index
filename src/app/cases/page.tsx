@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import StaticPage, { staticPageStyles as styles } from "../../components/StaticPage";
 import { cases } from "../../content/site";
 
@@ -6,15 +8,27 @@ export default function CasesPage() {
     <StaticPage
       eyebrow="Proof"
       title="案例成果"
-      description="用学校合作、教育综合体运营、区域智慧教育平台、智慧研学平台、新媒体运营和码头文旅数字化交付证明执理的真实能力。"
+      description="以真实项目沉淀教育科技与消费科技的交付经验，呈现课程研发、场景运营、平台建设和系统监理等代表性成果。"
     >
-      <div className={styles.grid}>
+      <div className={styles.caseGrid}>
         {cases.map((item) => (
-          <section className={styles.card} key={item.title}>
-            <p>{item.label}</p>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <p>{item.outcome}</p>
+          <section className={`${styles.card} ${styles.caseCard}`} key={item.title}>
+            <div className={styles.caseMedia}>
+              <Image
+                className={styles.caseVisual}
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                width={1600}
+                height={900}
+                sizes="(max-width: 760px) 100vw, 33vw"
+              />
+              <p>{item.label}</p>
+            </div>
+            <div className={styles.caseBody}>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+              <p>{item.outcome}</p>
+            </div>
           </section>
         ))}
       </div>
