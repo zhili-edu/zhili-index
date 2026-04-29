@@ -38,9 +38,15 @@ describe("HomeSections", () => {
     expect(within(productsSection).getAllByRole("article")).toHaveLength(4);
     expect(within(productsSection).getByText("Online Judge")).toBeInTheDocument();
     expect(within(productsSection).getByText("文旅智慧运营中台")).toBeInTheDocument();
+    const casesSection = screen.getByRole("region", { name: "案例成果" });
+    expect(within(casesSection).getAllByRole("article")).toHaveLength(6);
+    expect(within(casesSection).getByText("职校")).toBeInTheDocument();
+    expect(within(casesSection).getByText("码头文旅数字化运营")).toBeInTheDocument();
+
+    const partnersSection = screen.getByRole("region", { name: "合作伙伴" });
+    expect(within(partnersSection).getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();
+    expect(within(partnersSection).getByText("天津大学教育学院")).toBeInTheDocument();
     expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
-    expect(screen.getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();
-    expect(screen.getByText("天津大学教育学院")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "关于执理" })).toBeInTheDocument();
     expect(screen.getByText(/团队起步于 2019 年/)).toBeInTheDocument();
     expect(screen.getByText(/教育 \+ 科技/)).toBeInTheDocument();

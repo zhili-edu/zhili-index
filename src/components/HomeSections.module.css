@@ -253,12 +253,10 @@
 }
 
 .metrics,
-.grid,
 .partnerGrid {
   display: grid;
 }
 
-.grid,
 .partnerGrid {
   gap: 1rem;
 }
@@ -271,7 +269,6 @@
   gap: var(--space-4);
 }
 
-.card,
 .partner,
 .aboutPanel {
   border: 1px solid rgba(15, 48, 92, 0.1);
@@ -280,7 +277,6 @@
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.card:hover,
 .partner:hover,
 .aboutPanel:hover {
   transform: translateY(-3px);
@@ -310,10 +306,6 @@
 .metric span {
   color: var(--color-text-muted);
   font-size: 0.875rem;
-}
-
-.grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .solutionsBento {
@@ -461,68 +453,97 @@
   width: 76%;
 }
 
-.card {
-  min-height: 19rem;
-  padding: 1.6rem;
-  border-radius: 1.6rem;
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.caseCard {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
-.card::before {
-  content: "";
+.caseImage {
+  min-height: 200px;
+  background: linear-gradient(to bottom, var(--color-skeleton), #e2e2e5);
+}
+
+.caseLabel {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent 36%);
-  opacity: 0;
-  transition: opacity 180ms ease;
+  top: 170px;
+  left: var(--space-4);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
-.card:hover::before {
-  opacity: 1;
+.caseCopy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4) var(--space-4);
 }
 
-.grid article:nth-child(2n) {
-  background: linear-gradient(180deg, #ffffff, #f3f7ff);
-}
-
-.grid article:nth-child(3n) {
-  background: linear-gradient(180deg, #ffffff, #f1fbf9);
-}
-
-.card h3 {
-  margin: 0 0 1rem;
-  color: #102033;
+.caseCopy h3 {
+  margin: 0;
+  color: var(--color-text);
   font-size: 1.45rem;
 }
 
-.card p,
-.card li,
+.caseCopy p,
 .aboutPanel p {
-  color: #52677f;
+  margin: 0;
+  color: var(--color-text-muted);
   line-height: 1.75;
 }
 
-.card ul {
-  margin: 1rem 0 0;
-  padding-left: 1.2rem;
+.caseCopy strong {
+  margin-top: auto;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .partnerGrid {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
 .partner {
   min-height: 6rem;
   display: grid;
   place-items: center;
-  padding: 1rem;
-  border-radius: 1.2rem;
-  color: #203a57;
+  padding: var(--space-4);
+  border: 0;
+  border-radius: 0;
+  color: var(--color-text);
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(241, 248, 255, 0.9));
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.4;
+  filter: grayscale(1);
+  transition: opacity var(--transition);
+}
+
+.partner:hover {
+  transform: none;
+  border-color: transparent;
+  box-shadow: none;
+  opacity: 1;
 }
 
 .aboutPanel {
@@ -578,9 +599,9 @@
   }
 
   .metrics,
-  .grid,
   .solutionsBento,
   .productsGrid,
+  .casesGrid,
   .partnerGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -597,9 +618,9 @@
   }
 
   .metrics,
-  .grid,
   .solutionsBento,
   .productsGrid,
+  .casesGrid,
   .partnerGrid {
     grid-template-columns: 1fr;
   }

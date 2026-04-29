@@ -12,24 +12,6 @@ import {
 import AppShell from "./AppShell";
 import styles from "./HomeSections.module.css";
 
-function CardList({ items }: { items: typeof solutions }) {
-  return (
-    <div className={styles.grid}>
-      {items.map((item) => (
-        <article className={styles.card} key={item.title}>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-          <ul>
-            {item.points.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
-    </div>
-  );
-}
-
 function SolutionsBento() {
   return (
     <div className={styles.solutionsBento}>
@@ -154,24 +136,27 @@ export default function HomeSections() {
         <ProductsGrid />
       </section>
 
-      <section className={styles.section} aria-labelledby="cases-title">
+      <section className={styles.section} aria-labelledby="cases-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="cases-title">案例成果</h2>
           <p>以学校合作、平台交付、运营服务和码头文旅数字化构成可信背书。</p>
         </div>
-        <div className={styles.grid}>
+        <div className={styles.casesGrid}>
           {cases.map((item) => (
-            <article className={styles.card} key={item.title}>
-              <p>{item.label}</p>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <p>{item.outcome}</p>
+            <article className={styles.caseCard} key={item.title}>
+              <div className={styles.caseImage} aria-hidden="true" />
+              <span className={styles.caseLabel}>{item.label}</span>
+              <div className={styles.caseCopy}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <strong>{item.outcome}</strong>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className={styles.section} aria-labelledby="partners-title">
+      <section className={styles.section} aria-labelledby="partners-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="partners-title">合作伙伴</h2>
           <p>与教育、文旅、算力、学术和出版生态伙伴协同建设 AI 时代计算机教育。</p>
