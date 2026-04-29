@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "oss": "ossutil sync -uf --delete ./out oss://zhili-index"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
