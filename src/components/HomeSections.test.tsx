@@ -27,6 +27,8 @@ describe("HomeSections", () => {
     expect(screen.getByText("平台 × 内容 × 运营")).toBeInTheDocument();
     expect(screen.getByText("Digital Capabilities")).toBeInTheDocument();
     expect(screen.getByText("Physical Implementation")).toBeInTheDocument();
+    expect(screen.getByText("2021")).toBeInTheDocument();
+    expect(screen.getByText("7 项")).toBeInTheDocument();
     expect(screen.getAllByText("职教 AIGC 实训平台").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
     expect(screen.getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();

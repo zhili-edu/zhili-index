@@ -83,14 +83,14 @@ export default function HomeSections() {
           <h2 id="metrics-title">真实场景打磨出的教育科技能力</h2>
           <p>从线下教学、进校服务到平台研发和赛事技术运维，用持续交付验证能力。</p>
         </div>
-        <div className={styles.metrics}>
+        <ul className={styles.metrics} aria-label="执理能力指标">
           {metrics.map((metric) => (
-            <div className={styles.metric} key={metric.label}>
+            <li className={styles.metric} key={metric.label}>
               <strong>{metric.value}</strong>
               <span>{metric.label}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <section className={styles.section} aria-labelledby="solutions-title">
