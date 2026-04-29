@@ -49,6 +49,32 @@ function SolutionsBento() {
   );
 }
 
+function ProductsGrid() {
+  return (
+    <div className={styles.productsGrid}>
+      {products.map((item) => (
+        <article className={styles.productCard} key={item.title}>
+          <div className={styles.productCopy}>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <ul className={styles.tagList}>
+              {item.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.productMockup} aria-hidden="true">
+            <span />
+            <strong>{item.title.slice(0, 2)}</strong>
+            <i />
+            <i />
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export default function HomeSections() {
   return (
     <AppShell>
@@ -120,12 +146,12 @@ export default function HomeSections() {
         <SolutionsBento />
       </section>
 
-      <section className={styles.section} aria-labelledby="products-title">
+      <section className={styles.section} aria-labelledby="products-title" role="region">
         <div className={styles.sectionHeader}>
           <h2 id="products-title">产品与平台</h2>
           <p>把真实教育和场景交付沉淀为可复用的平台能力。</p>
         </div>
-        <CardList items={products} />
+        <ProductsGrid />
       </section>
 
       <section className={styles.section} aria-labelledby="cases-title">

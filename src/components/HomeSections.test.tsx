@@ -34,6 +34,10 @@ describe("HomeSections", () => {
     expect(within(solutionsSection).getAllByRole("article")).toHaveLength(4);
     expect(within(solutionsSection).getByText("C++ / CSP-J / GESP 课程体系")).toBeInTheDocument();
     expect(screen.getAllByText("职教 AIGC 实训平台").length).toBeGreaterThanOrEqual(1);
+    const productsSection = screen.getByRole("region", { name: "产品与平台" });
+    expect(within(productsSection).getAllByRole("article")).toHaveLength(4);
+    expect(within(productsSection).getByText("Online Judge")).toBeInTheDocument();
+    expect(within(productsSection).getByText("文旅智慧运营中台")).toBeInTheDocument();
     expect(screen.getByText("执理信息学奥赛学习平台")).toBeInTheDocument();
     expect(screen.getByText("天津市滨海新区泰达第一中学")).toBeInTheDocument();
     expect(screen.getByText("天津大学教育学院")).toBeInTheDocument();

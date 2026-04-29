@@ -381,6 +381,86 @@
   font-size: 0.875rem;
 }
 
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.productCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.productCopy {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+}
+
+.productCopy h3 {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+  font-size: 1.45rem;
+}
+
+.productCopy p {
+  flex: 1;
+  margin: 0 0 var(--space-6);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.productMockup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-5) var(--space-5) calc(var(--space-5) * -1) 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 102, 204, 0.04);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.productMockup span,
+.productMockup i {
+  display: block;
+  border-radius: var(--radius-pill);
+  background: var(--color-skeleton);
+}
+
+.productMockup span {
+  width: 70%;
+  height: 0.7rem;
+}
+
+.productMockup strong {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  font-size: 1rem;
+}
+
+.productMockup i {
+  height: 2.75rem;
+}
+
+.productMockup i:last-child {
+  width: 76%;
+}
+
 .card {
   min-height: 19rem;
   padding: 1.6rem;
@@ -500,6 +580,7 @@
   .metrics,
   .grid,
   .solutionsBento,
+  .productsGrid,
   .partnerGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -518,8 +599,17 @@
   .metrics,
   .grid,
   .solutionsBento,
+  .productsGrid,
   .partnerGrid {
     grid-template-columns: 1fr;
+  }
+
+  .productCard {
+    grid-template-columns: 1fr;
+  }
+
+  .productMockup {
+    margin: 0 var(--space-5) calc(var(--space-5) * -1);
   }
 
   .solutionCard:nth-child(1) {
