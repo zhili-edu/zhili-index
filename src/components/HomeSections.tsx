@@ -43,6 +43,7 @@ export default function HomeSections() {
               <Link
                 className={index === 0 ? styles.primary : styles.secondary}
                 href={action.href}
+                aria-label={action.label === "联系合作" ? "联系合作，查看合作入口" : undefined}
                 key={action.href}
               >
                 {action.label}
@@ -157,7 +158,7 @@ export default function HomeSections() {
       <section className={styles.cta}>
         <h2>共同探索 AI 时代的计算机教育与场景数字化解决方案</h2>
         <p>欢迎学校、职业院校、教育集团、文旅机构、产业方与投资机构联系我们。</p>
-        <Link className={styles.primary} href="/contact">
+        <Link className={styles.primary} href="/contact" aria-label="联系合作，提交合作意向">
           联系合作
         </Link>
       </section>
