@@ -50,7 +50,9 @@ const routeTree = rootRoute.addChildren([
 
 type RouterOptions = Parameters<typeof createRouter>[0];
 
-export function createAppRouter(options?: Pick<RouterOptions, "history">) {
+type AppRouterOptions = Partial<Pick<RouterOptions, "history" | "isPrerendering" | "isServer">>;
+
+export function createAppRouter(options?: AppRouterOptions) {
   return createRouter({
     routeTree,
     scrollRestoration: true,
