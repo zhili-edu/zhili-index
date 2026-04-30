@@ -3,11 +3,7 @@ import { about } from "../content/site";
 
 export default function AboutPage() {
   return (
-    <StaticPage
-      eyebrow="About Zhili"
-      title="关于我们"
-      description={about.description}
-    >
+    <StaticPage eyebrow="About Zhili" title="关于我们" description={about.description}>
       <div className={styles.grid}>
         <section className={styles.card}>
           <h2>愿景</h2>

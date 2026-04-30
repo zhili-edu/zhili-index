@@ -3,7 +3,11 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 10%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 24rem),
+    radial-gradient(
+      circle at 78% 10%,
+      color-mix(in srgb, var(--color-accent) 8%, transparent),
+      transparent 24rem
+    ),
     linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 46%, var(--color-bg) 100%);
 }
 

@@ -228,7 +228,8 @@ export const about = {
     {
       name: "琢磨运营",
       label: "新媒体运营方向",
-      description: "面向教育项目、区域活动和品牌传播，提供内容策划、新媒体运营、私域增长与用户触达能力。",
+      description:
+        "面向教育项目、区域活动和品牌传播，提供内容策划、新媒体运营、私域增长与用户触达能力。",
     },
   ] satisfies BusinessUnit[],
 };

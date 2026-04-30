@@ -15,19 +15,13 @@ describe("HomeSections", () => {
     expect(screen.getByRole("navigation", { name: "官网导航" })).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "联系我们" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "产品与平台" })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "解决方案" })).toHaveAttribute(
-      "href",
-      "/solutions",
-    );
+    expect(screen.getByRole("link", { name: "解决方案" })).toHaveAttribute("href", "/solutions");
     expect(screen.getByText("教育数字化解决方案")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "了解解决方案" })).toHaveAttribute(
       "href",
       "/solutions",
     );
-    expect(screen.getByRole("link", { name: "查看案例成果" })).toHaveAttribute(
-      "href",
-      "/cases",
-    );
+    expect(screen.getByRole("link", { name: "查看案例成果" })).toHaveAttribute("href", "/cases");
     expect(screen.queryByRole("heading", { name: "平台 + 课程 + 运营" })).not.toBeInTheDocument();
     expect(screen.queryByText("校内外协同服务体系")).not.toBeInTheDocument();
     expect(screen.queryByText("Digital Platform")).not.toBeInTheDocument();
@@ -38,9 +32,9 @@ describe("HomeSections", () => {
     expect(screen.queryByText(/更加规范、高效、开放的青少年教育服务生态/)).not.toBeInTheDocument();
     const solutionsSection = screen.getByRole("region", { name: "四大解决方案" });
     expect(solutionsSection).toBeInTheDocument();
-    expect(
-      within(solutionsSection).getByText(/围绕滨海新区校外教育平台建设/).className,
-    ).toContain("featuredSolutionDescription");
+    expect(within(solutionsSection).getByText(/围绕滨海新区校外教育平台建设/).className).toContain(
+      "featuredSolutionDescription",
+    );
     expect(within(solutionsSection).getAllByRole("article")).toHaveLength(4);
     expect(within(solutionsSection).getByText("滨海新区校外教育平台")).toBeInTheDocument();
     expect(screen.getAllByText("课后服务数字化平台").length).toBeGreaterThanOrEqual(1);
@@ -49,7 +43,9 @@ describe("HomeSections", () => {
     expect(within(solutionsSection).getByText(/文旅研学平台研途有答案/)).toBeInTheDocument();
     expect(within(solutionsSection).getByText("研途有答案")).toBeInTheDocument();
     expect(within(solutionsSection).getByText("收缴费")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "青少年素质教育数字化区域服务商" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "青少年素质教育数字化区域服务商" }),
+    ).toBeInTheDocument();
     expect(screen.queryByRole("region", { name: "产品与平台" })).not.toBeInTheDocument();
     expect(screen.queryByText("课后服务教育平台")).not.toBeInTheDocument();
     expect(screen.queryByText("双业务多租户监管平台")).not.toBeInTheDocument();
@@ -78,7 +74,9 @@ describe("HomeSections", () => {
     const homepagePartners = within(partnersSection).getAllByText(/天津/);
     expect(homepagePartners[0]).toHaveTextContent("天津市天河计算机技术有限公司");
     expect(homepagePartners[1]).toHaveTextContent("天津滨海文化旅游发展有限公司");
-    expect(within(partnersSection).queryByText("天津市滨海新区滨旅游船码头发展有限公司")).not.toBeInTheDocument();
+    expect(
+      within(partnersSection).queryByText("天津市滨海新区滨旅游船码头发展有限公司"),
+    ).not.toBeInTheDocument();
     expect(within(partnersSection).getByText("天津滨海教育发展集团有限公司")).toBeInTheDocument();
     expect(within(partnersSection).getByText("天津滨海民生发展有限公司")).toBeInTheDocument();
     expect(screen.queryByText("课后服务教育平台")).not.toBeInTheDocument();
@@ -92,10 +90,12 @@ describe("HomeSections", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("让业务结构更清晰")).toBeInTheDocument();
     expect(screen.getByText("让项目落地更高效")).toBeInTheDocument();
-    expect(screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/contact"))
-      .toBe(true);
-    expect(screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/products"))
-      .toBe(true);
+    expect(
+      screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/contact"),
+    ).toBe(true);
+    expect(
+      screen.getAllByRole("link").every((link) => link.getAttribute("href") !== "/products"),
+    ).toBe(true);
   });
 
   it("keeps homepage case images inside fixed-ratio thumbnail frames", async () => {

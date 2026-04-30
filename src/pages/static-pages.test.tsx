@@ -22,7 +22,9 @@ describe("static official website pages", () => {
     await renderRoute("/cases");
     expect(screen.getByRole("heading", { name: "案例成果" })).toBeInTheDocument();
     expect(
-      screen.getByText("以真实项目沉淀教育科技与消费科技的交付经验，呈现课程研发、场景运营、平台建设和系统监理等代表性成果。"),
+      screen.getByText(
+        "以真实项目沉淀教育科技与消费科技的交付经验，呈现课程研发、场景运营、平台建设和系统监理等代表性成果。",
+      ),
     ).toBeInTheDocument();
     expect(screen.queryByText(/第一行呈现教育科技/)).not.toBeInTheDocument();
     expect(screen.getByText("区本课程研发建设")).toBeInTheDocument();
@@ -56,9 +58,11 @@ describe("static official website pages", () => {
     expect(screen.getByText("天津市教育科学研究院附属滨海泰达中学")).toBeInTheDocument();
     expect(screen.queryByText("天津市滨海新区滨旅游船码头发展有限公司")).not.toBeInTheDocument();
     expect(screen.getByText("天津城市建设管理职业技术学院")).toBeInTheDocument();
-    const supplyChainSection = screen.getByRole("heading", {
-      name: "产业与供应链伙伴",
-    }).closest("section");
+    const supplyChainSection = screen
+      .getByRole("heading", {
+        name: "产业与供应链伙伴",
+      })
+      .closest("section");
     expect(supplyChainSection?.className).toContain("partnerGroupCompact");
     expect(supplyChainSection?.querySelectorAll("li")).toHaveLength(3);
   });

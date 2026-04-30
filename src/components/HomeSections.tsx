@@ -1,13 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-import {
-  about,
-  cases,
-  hero,
-  metrics,
-  partnerGroups,
-  solutions,
-} from "../content/site";
+import { about, cases, hero, metrics, partnerGroups, solutions } from "../content/site";
 import AppShell from "./AppShell";
 import styles from "./HomeSections.module.css";
 
@@ -118,11 +111,14 @@ export default function HomeSections() {
           <p>与教育集团、学校、文旅平台、算力企业、学术机构和出版生态伙伴协同建设教育科技能力。</p>
         </div>
         <div className={styles.partnerGrid}>
-          {partnerGroups.flatMap((group) => group.partners).slice(0, 12).map((partner) => (
-            <div className={styles.partner} key={partner}>
-              {partner}
-            </div>
-          ))}
+          {partnerGroups
+            .flatMap((group) => group.partners)
+            .slice(0, 12)
+            .map((partner) => (
+              <div className={styles.partner} key={partner}>
+                {partner}
+              </div>
+            ))}
         </div>
       </section>
 
@@ -140,10 +136,10 @@ export default function HomeSections() {
 
       <section className={styles.cta} aria-labelledby="final-cta-title">
         <p className={styles.ctaEyebrow}>Ready for implementation</p>
-          <h2 id="final-cta-title">
-            <span>让业务结构更清晰</span>
-            <span>让项目落地更高效</span>
-          </h2>
+        <h2 id="final-cta-title">
+          <span>让业务结构更清晰</span>
+          <span>让项目落地更高效</span>
+        </h2>
         <p>欢迎学校、教育集团、公共教育场馆、文旅机构、产业方与投资机构联系我们。</p>
         <div className={styles.actions}>
           <Link className={styles.primaryOnDark} to="/cases">

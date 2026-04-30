@@ -1,13 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  about,
-  cases,
-  hero,
-  navigation,
-  partnerGroups,
-  solutions,
-} from "./site";
+import { about, cases, hero, navigation, partnerGroups, solutions } from "./site";
 
 describe("site content", () => {
   it("defines the five official website navigation items", () => {

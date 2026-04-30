@@ -10,12 +10,7 @@ type StaticPageProps = {
   children: ReactNode;
 };
 
-export default function StaticPage({
-  eyebrow,
-  title,
-  description,
-  children,
-}: StaticPageProps) {
+export default function StaticPage({ eyebrow, title, description, children }: StaticPageProps) {
   return (
     <AppShell>
       <article className={styles.page}>
