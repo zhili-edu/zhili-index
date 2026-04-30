@@ -1,11 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import HomePage from "./page";
+import { renderRoute } from "../test/renderRoute";
 
 describe("HomePage", () => {
-  it("renders the official website brand position", () => {
-    render(<HomePage />);
+  it("renders the official website brand position", async () => {
+    await renderRoute("/");
 
     expect(
       screen.getByRole("heading", {

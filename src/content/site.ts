@@ -1,11 +1,13 @@
+export type InternalRoute = "/" | "/solutions" | "/cases" | "/partners" | "/about";
+
 export type NavItem = {
   label: string;
-  href: string;
+  href: InternalRoute;
 };
 
 export type Action = {
   label: string;
-  href: string;
+  href: InternalRoute;
 };
 
 export type HighlightCard = {

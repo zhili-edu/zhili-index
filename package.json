@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "vite --host 127.0.0.1 --port 3000",
+    "build": "vite build && node scripts/emit-static-routes.mjs",
+    "start": "vite preview --host 127.0.0.1 --port 3000",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -14,22 +14,25 @@
     "oss": "ossutil sync -uf --delete ./out oss://zhili-index"
   },
   "dependencies": {
+    "@tanstack/react-router": "latest",
     "@vitejs/plugin-react": "latest",
-    "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@eslint/js": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest",
+    "globals": "latest",
     "jsdom": "latest",
     "@playwright/test": "latest",
+    "typescript-eslint": "latest",
     "typescript": "latest",
+    "vite": "latest",
     "vitest": "latest"
   }
 }

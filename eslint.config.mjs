@@ -1,20 +1,29 @@
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTypescript from "eslint-config-next/typescript";
+import js from "@eslint/js";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
-const eslintConfig = [
-  ...nextVitals,
-  ...nextTypescript,
+export default tseslint.config(
   {
     ignores: [
       "node_modules/**",
       ".next/**",
       "out/**",
+      "dist/**",
       "build/**",
       "test-results/**",
       "playwright-report/**",
-      "next-env.d.ts",
     ],
   },
-];
-
-export default eslintConfig;
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      ecmaVersion: 2022,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+);

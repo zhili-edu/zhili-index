@@ -1,7 +1,5 @@
-import Image from "next/image";
-
-import StaticPage, { staticPageStyles as styles } from "../../components/StaticPage";
-import { cases } from "../../content/site";
+import StaticPage, { staticPageStyles as styles } from "../components/StaticPage";
+import { cases } from "../content/site";
 
 export default function CasesPage() {
   return (
@@ -14,13 +12,14 @@ export default function CasesPage() {
         {cases.map((item) => (
           <section className={`${styles.card} ${styles.caseCard}`} key={item.title}>
             <div className={styles.caseMedia}>
-              <Image
+              <img
                 className={styles.caseVisual}
                 src={item.imageSrc}
                 alt={item.imageAlt}
                 width={1600}
                 height={900}
                 sizes="(max-width: 760px) 100vw, 33vw"
+                loading="lazy"
               />
               <p>{item.label}</p>
             </div>

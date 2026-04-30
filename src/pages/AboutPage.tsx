@@ -1,5 +1,5 @@
-import StaticPage, { staticPageStyles as styles } from "../../components/StaticPage";
-import { about } from "../../content/site";
+import StaticPage, { staticPageStyles as styles } from "../components/StaticPage";
+import { about } from "../content/site";
 
 export default function AboutPage() {
   return (

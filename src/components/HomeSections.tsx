@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 
 import {
   about,
@@ -49,7 +48,7 @@ export default function HomeSections() {
             {hero.actions.map((action, index) => (
               <Link
                 className={index === 0 ? styles.primary : styles.secondary}
-                href={action.href}
+                to={action.href}
                 aria-label={action.label === "联系合作" ? "联系合作，查看合作入口" : undefined}
                 key={action.href}
               >
@@ -92,13 +91,14 @@ export default function HomeSections() {
           {cases.map((item) => (
             <article className={styles.caseCard} key={item.title}>
               <div className={styles.caseMedia}>
-                <Image
+                <img
                   className={styles.caseImage}
                   src={item.imageSrc}
                   alt={item.imageAlt}
                   width={1600}
                   height={1000}
                   sizes="(max-width: 620px) 100vw, (max-width: 960px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 <span className={styles.caseLabel}>{item.label}</span>
               </div>
@@ -146,10 +146,10 @@ export default function HomeSections() {
           </h2>
         <p>欢迎学校、教育集团、公共教育场馆、文旅机构、产业方与投资机构联系我们。</p>
         <div className={styles.actions}>
-          <Link className={styles.primaryOnDark} href="/cases">
+          <Link className={styles.primaryOnDark} to="/cases">
             查看案例
           </Link>
-          <Link className={styles.secondaryOnDark} href="/partners">
+          <Link className={styles.secondaryOnDark} to="/partners">
             查看伙伴
           </Link>
         </div>

@@ -18,8 +18,8 @@ describe("site content", () => {
       { label: "合作伙伴", href: "/partners" },
       { label: "关于我们", href: "/about" },
     ]);
-    expect(navigation.some((item) => item.href === "/contact")).toBe(false);
-    expect(navigation.some((item) => item.href === "/products")).toBe(false);
+    expect(navigation.map((item) => item.href)).not.toContain("/contact");
+    expect(navigation.map((item) => item.href)).not.toContain("/products");
   });
 
   it("keeps the approved hero positioning", () => {
@@ -29,7 +29,7 @@ describe("site content", () => {
       "执理教育聚焦青少年科技教育、课后服务数字化和校外教育平台建设，围绕政府、学校、教育集团和公共教育场馆的实际需求，提供“平台建设 + 课程供给 + 运营服务”的一体化解决方案。",
     );
     expect(hero.actions).toHaveLength(2);
-    expect(hero.actions.some((action) => action.href === "/contact")).toBe(false);
+    expect(hero.actions.map((action) => action.href)).not.toContain("/contact");
   });
 
   it("models the four approved solution pillars", () => {

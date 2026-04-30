@@ -1,17 +1,14 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
-import AboutPage from "./about/page";
-import CasesPage from "./cases/page";
-import PartnersPage from "./partners/page";
-import SolutionsPage from "./solutions/page";
+import { renderRoute } from "../test/renderRoute";
 
 const staticPageCss = readFileSync("src/components/StaticPage.module.css", "utf8");
 
 describe("static official website pages", () => {
-  it("renders the solutions page", () => {
-    render(<SolutionsPage />);
+  it("renders the solutions page", async () => {
+    await renderRoute("/solutions");
     expect(screen.getByRole("heading", { name: "解决方案" })).toBeInTheDocument();
     expect(screen.getByText("课后服务数字化平台")).toBeInTheDocument();
     expect(screen.getByText("青少年宫教务平台")).toBeInTheDocument();
@@ -21,8 +18,8 @@ describe("static official website pages", () => {
     expect(screen.getByText("收缴费")).toBeInTheDocument();
   });
 
-  it("renders the cases page", () => {
-    render(<CasesPage />);
+  it("renders the cases page", async () => {
+    await renderRoute("/cases");
     expect(screen.getByRole("heading", { name: "案例成果" })).toBeInTheDocument();
     expect(
       screen.getByText("以真实项目沉淀教育科技与消费科技的交付经验，呈现课程研发、场景运营、平台建设和系统监理等代表性成果。"),
@@ -51,8 +48,8 @@ describe("static official website pages", () => {
     expect(staticPageCss).toMatch(/\.caseVisual\s*{[\s\S]*?height:\s*100%;/);
   });
 
-  it("renders the partners page", () => {
-    render(<PartnersPage />);
+  it("renders the partners page", async () => {
+    await renderRoute("/partners");
     expect(screen.getByRole("heading", { name: "合作伙伴" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "教育集团与学校" })).toBeInTheDocument();
     expect(screen.getByText("天津经济技术开发区第一中学")).toBeInTheDocument();
@@ -66,8 +63,8 @@ describe("static official website pages", () => {
     expect(supplyChainSection?.querySelectorAll("li")).toHaveLength(3);
   });
 
-  it("renders the about page", () => {
-    render(<AboutPage />);
+  it("renders the about page", async () => {
+    await renderRoute("/about");
     expect(screen.getByRole("heading", { name: "关于我们" })).toBeInTheDocument();
     expect(screen.getAllByText(/执着理想/).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole("heading", { name: "业务主体与生态" })).toBeInTheDocument();

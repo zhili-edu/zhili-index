@@ -1,5 +1,5 @@
-import StaticPage, { staticPageStyles as styles } from "../../components/StaticPage";
-import { solutions } from "../../content/site";
+import StaticPage, { staticPageStyles as styles } from "../components/StaticPage";
+import { solutions } from "../content/site";
 
 export default function SolutionsPage() {
   return (

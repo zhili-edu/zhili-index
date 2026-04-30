@@ -1,5 +1,5 @@
-import StaticPage, { staticPageStyles as styles } from "../../components/StaticPage";
-import { partnerGroups } from "../../content/site";
+import StaticPage, { staticPageStyles as styles } from "../components/StaticPage";
+import { partnerGroups } from "../content/site";
 
 export default function PartnersPage() {
   return (

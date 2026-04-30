@@ -1,14 +1,14 @@
-import { render, screen, within } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
-import HomeSections from "./HomeSections";
+import { renderRoute } from "../test/renderRoute";
 
 const homeSectionsCss = readFileSync("src/components/HomeSections.module.css", "utf8");
 
 describe("HomeSections", () => {
-  it("renders official navigation and homepage content from the content model", () => {
-    render(<HomeSections />);
+  it("renders official navigation and homepage content from the content model", async () => {
+    await renderRoute("/");
 
     expect(screen.getByLabelText("北京执理教育科技有限公司首页")).toHaveAttribute("href", "/");
     expect(screen.getByText("北京执理教育科技有限公司")).toBeInTheDocument();
@@ -98,8 +98,8 @@ describe("HomeSections", () => {
       .toBe(true);
   });
 
-  it("keeps homepage case images inside fixed-ratio thumbnail frames", () => {
-    render(<HomeSections />);
+  it("keeps homepage case images inside fixed-ratio thumbnail frames", async () => {
+    await renderRoute("/");
 
     const casesSection = screen.getByRole("region", { name: "案例成果" });
     expect(casesSection.querySelectorAll('[class*="_caseMedia"]')).toHaveLength(6);
