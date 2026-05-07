@@ -36,13 +36,15 @@ describe("static official website pages", () => {
     expect(screen.getByText(/微信小程序、抖音、美团、携程、旅惠卡和线下窗口/)).toBeInTheDocument();
     expect(screen.getByText("民生平台监理项目")).toBeInTheDocument();
     expect(screen.getByText("小城建 AIGC 平台")).toBeInTheDocument();
+    expect(screen.getByText("全球出海合伙人首笔海外订单")).toBeInTheDocument();
+    expect(screen.getByText(/印尼教育部 kording 采购资源/)).toBeInTheDocument();
     expect(screen.getByText(/技术验收、问题跟踪/)).toBeInTheDocument();
-    expect(screen.getAllByRole("img")).toHaveLength(6);
+    expect(screen.getAllByRole("img")).toHaveLength(7);
     expect(screen.getByRole("img", { name: /信息学奥赛教材出版/ })).toHaveAttribute(
       "src",
       expect.stringContaining("case-informatics-textbook.png"),
     );
-    expect(document.querySelectorAll('[class*="_caseBody"]')).toHaveLength(6);
+    expect(document.querySelectorAll('[class*="_caseBody"]')).toHaveLength(7);
   });
 
   it("keeps case images inside fixed-ratio thumbnail frames", () => {

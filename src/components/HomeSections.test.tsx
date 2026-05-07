@@ -51,7 +51,7 @@ describe("HomeSections", () => {
     expect(screen.queryByText("双业务多租户监管平台")).not.toBeInTheDocument();
     expect(screen.queryByText("文旅票务中台")).not.toBeInTheDocument();
     const casesSection = screen.getByRole("region", { name: "案例成果" });
-    expect(within(casesSection).getAllByRole("article")).toHaveLength(6);
+    expect(within(casesSection).getAllByRole("article")).toHaveLength(7);
     expect(within(casesSection).getByText("信息学奥赛教材出版")).toBeInTheDocument();
     expect(within(casesSection).getByText("区本课程研发建设")).toBeInTheDocument();
     expect(within(casesSection).getByText(/联合泰达一中建设校本课程/)).toBeInTheDocument();
@@ -62,7 +62,9 @@ describe("HomeSections", () => {
     expect(within(casesSection).getByText("文旅票务与渠道整合")).toBeInTheDocument();
     expect(within(casesSection).getByText("民生平台监理项目")).toBeInTheDocument();
     expect(within(casesSection).getByText("小城建 AIGC 平台")).toBeInTheDocument();
-    expect(within(casesSection).getAllByRole("img")).toHaveLength(6);
+    expect(within(casesSection).getByText("全球出海合伙人首笔海外订单")).toBeInTheDocument();
+    expect(within(casesSection).getByText(/印尼教育部 kording 采购资源/)).toBeInTheDocument();
+    expect(within(casesSection).getAllByRole("img")).toHaveLength(7);
     expect(within(casesSection).getByRole("img", { name: /文旅票务与渠道整合/ })).toHaveAttribute(
       "src",
       expect.stringContaining("case-tourism-ticketing.png"),
@@ -102,7 +104,7 @@ describe("HomeSections", () => {
     await renderRoute("/");
 
     const casesSection = screen.getByRole("region", { name: "案例成果" });
-    expect(casesSection.querySelectorAll('[class*="_caseMedia"]')).toHaveLength(6);
+    expect(casesSection.querySelectorAll('[class*="_caseMedia"]')).toHaveLength(7);
     expect(homeSectionsCss).toMatch(/\.caseMedia\s*{[\s\S]*?aspect-ratio:\s*16\s*\/\s*10;/);
     expect(homeSectionsCss).toMatch(/\.caseImage\s*{[\s\S]*?height:\s*100%;/);
   });

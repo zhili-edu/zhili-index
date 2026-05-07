@@ -153,6 +153,15 @@ export const cases: CaseStudy[] = [
     imageSrc: "/images/cases/case-aigc-platform.png",
     imageAlt: "小城建 AIGC 平台案例配图",
   },
+  {
+    label: "海外订单",
+    title: "全球出海合伙人首笔海外订单",
+    description:
+      "天津经开区—泰达报道“全球出海合伙人计划”成功链接印尼教育部 kording 采购资源，执理科技斩获首笔海外订单并与印尼教育部达成合作意向。",
+    outcome: "泰达官方报道 + 印尼教育部合作意向",
+    imageSrc: "/images/cases/case-overseas-order.svg",
+    imageAlt: "全球出海合伙人首笔海外订单案例配图",
+  },
 ];
 
 export const partnerGroups: PartnerGroup[] = [

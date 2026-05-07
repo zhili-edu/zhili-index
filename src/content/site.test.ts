@@ -39,8 +39,8 @@ describe("site content", () => {
     expect(solutions.every((solution) => solution.points.length >= 3)).toBe(true);
   });
 
-  it("models six key business cases with labels and outcomes", () => {
-    expect(cases).toHaveLength(6);
+  it("models seven key business cases with labels and outcomes", () => {
+    expect(cases).toHaveLength(7);
     expect(cases[0]).toMatchObject({ label: "出版", title: "信息学奥赛教材出版" });
     expect(cases[1]).toMatchObject({ label: "区本课程", title: "区本课程研发建设" });
     expect(cases[2]).toMatchObject({ label: "机构运营", title: "教育培训机构运营" });
@@ -51,6 +51,7 @@ describe("site content", () => {
       "文旅票务",
       "民生监理",
       "AI 应用",
+      "海外订单",
     ]);
     expect(cases.map((item) => item.title)).toEqual([
       "信息学奥赛教材出版",
@@ -59,6 +60,7 @@ describe("site content", () => {
       "文旅票务与渠道整合",
       "民生平台监理项目",
       "小城建 AIGC 平台",
+      "全球出海合伙人首笔海外订单",
     ]);
     expect(cases.map((item) => item.imageSrc)).toEqual([
       "/images/cases/case-informatics-textbook.png",
@@ -67,6 +69,7 @@ describe("site content", () => {
       "/images/cases/case-tourism-ticketing.png",
       "/images/cases/case-public-service-supervision.png",
       "/images/cases/case-aigc-platform.png",
+      "/images/cases/case-overseas-order.svg",
     ]);
     expect(cases.every((item) => item.imageAlt.includes(item.title))).toBe(true);
     expect(cases[0]?.description).toBe(
@@ -87,6 +90,9 @@ describe("site content", () => {
     expect(cases[5]?.description).toBe(
       "围绕业务素材、提示词、文本、图片和内容生成流程，展示 AI 生成能力在业务系统中的落地应用，并覆盖人工审核、调整、应用和归档。",
     );
+    expect(cases[6]?.description).toBe(
+      "天津经开区—泰达报道“全球出海合伙人计划”成功链接印尼教育部 kording 采购资源，执理科技斩获首笔海外订单并与印尼教育部达成合作意向。",
+    );
     expect(cases[1]?.description).toContain("联合泰达一中建设校本课程");
     expect(cases[1]?.description).toContain("信息学奥赛编程教育进学校");
     expect(cases[2]?.description).toContain("生态城社工部");
@@ -96,6 +102,9 @@ describe("site content", () => {
     expect(cases[4]?.description).toContain("阳光采购平台一期/二期");
     expect(cases[4]?.description).toContain("乐易来小程序");
     expect(cases[5]?.description).toContain("AI 生成能力");
+    expect(cases[6]?.description).toContain("天津经开区—泰达");
+    expect(cases[6]?.description).toContain("印尼教育部 kording 采购资源");
+    expect(cases[6]?.outcome).toBe("泰达官方报道 + 印尼教育部合作意向");
     expect(cases.map((item) => item.title)).not.toContain("区域智慧教育平台建设");
     expect(cases.map((item) => item.title)).not.toContain("区域智慧教育与研学平台");
     expect(cases.every((item) => item.outcome.length > 0)).toBe(true);
