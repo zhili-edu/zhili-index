@@ -7,3 +7,17 @@ test-results/
 playwright-report/
 tsconfig.tsbuildinfo
 *.log
+
+# --- common ignores ---
+
+# Windows
+Thumbs.db
+
+# Editors
+*.swp
+.idea/
+
+# Environment
+.env
+.env.*
+!.env.example
