@@ -1,35 +1,45 @@
-import StaticPage, { staticPageStyles as styles } from "../components/StaticPage";
-import { about } from "../content/site";
+import { about, capabilities, capabilitiesHeading, defaultCta } from "../content/site";
+import { CtaPanel, FactList, PageHero, PartnersBand } from "../components/primitives";
 
 export default function AboutPage() {
   return (
-    <StaticPage eyebrow="About Zhili" title="关于我们" description={about.description}>
-      <div className={styles.grid}>
-        <section className={styles.card}>
-          <h2>愿景</h2>
-          <p>{about.vision}</p>
-        </section>
-        <section className={styles.card}>
-          <h2>组织能力</h2>
-          <p>执理团队形成教研、技术、新媒体运营、商务与交付协同的复合组织能力。</p>
-        </section>
-      </div>
-      <section className={styles.featureBlock}>
-        <div>
-          <p className={styles.kicker}>Education & Technology Ecosystem</p>
-          <h2>业务主体与生态</h2>
-          <p>{about.ecosystemDescription}</p>
-        </div>
-        <div className={styles.unitGrid}>
-          {about.businessUnits.map((unit) => (
-            <article className={styles.unitCard} key={unit.name}>
-              <span>{unit.label}</span>
-              <h3>{unit.name}</h3>
-              <p>{unit.description}</p>
-            </article>
-          ))}
+    <>
+      <PageHero crumbs={[{ label: "首页", href: "/" }, { label: "关于我们" }]} title={about.title} lead={about.lead} />
+
+      <section className="section band" data-od-id="about-facts">
+        <div className="container about-grid reveal">
+          <div className="stack">
+            <h2>{about.factsHead.title}</h2>
+            <p className="lead">{about.factsHead.lead}</p>
+          </div>
+          <FactList facts={about.facts} />
         </div>
       </section>
-    </StaticPage>
+
+      <section className="section" id="capabilities" data-od-id="capabilities">
+        <div className="container stack">
+          <div className="section-head reveal">
+            <div>
+              <h2>{capabilitiesHeading.title}</h2>
+            </div>
+            <p className="lead">{capabilitiesHeading.lead}</p>
+          </div>
+          <div className="capability-grid">
+            {capabilities.map((capability) => (
+              <article className="capability reveal" key={capability.no}>
+                <h3>
+                  <span className="num">{capability.no}</span>
+                  {capability.title}
+                </h3>
+                <p>{capability.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PartnersBand />
+      <CtaPanel content={defaultCta} />
+    </>
   );
 }

@@ -1,0 +1,120 @@
+/* ============================================================
+   Zhili Design System — colors_and_type.css
+   提取自定稿 9 页官网（src/styles/globals.css 为完整应用版）。
+   将本块原样粘贴进新产物的第一个 <style>，其余取值一律
+   通过 var(--*) 引用；派生色只用 color-mix，禁止新增裸 hex。
+   ============================================================ */
+
+/* ── hex anchors（与 :root 一一对应，供互操作查阅） ──
+   bg/surface #ffffff · band #f6f8fb · blue-soft #eef4ff
+   fg/ink #15233b · muted #64748b · border #e5e7eb
+   accent #2a5db0 · accent-on #ffffff
+   success #16a34a · warn #d97706 · danger #dc2626 */
+
+/* ── token role map（完整表格见 DESIGN.md §2 与 brand.json） ──
+   --bg 页面底 · --slate-band 银灰分区带 · --surface 卡片面 ·
+   --fg/--ink 墨色与深色面板底 · --muted 次级文字（禁作 hover 前景）·
+   --border 发丝线 · --accent 唯一强调色 ≤2×/视口 · --blue-soft
+   选中/悬停浅蓝洗色 · --success/--danger 仅表单语义 */
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-warm: var(--surface);
+  --fg: #15233b;
+  --fg-2: var(--fg);
+  --muted: #64748b;
+  --meta: var(--muted);
+  --border: #e5e7eb;
+  --border-soft: var(--border);
+  --accent: #2a5db0;
+  --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, var(--accent), white 10%);
+  --accent-active: color-mix(in oklab, var(--accent), white 18%);
+  --success: #16a34a;
+  --warn: #d97706;
+  --danger: #dc2626;
+
+  /* ── type ── CJK 系统无衬线担纲显示与正文，等宽为数据声部 ── */
+  --font-display: "Geist", "Geist Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-body: "Geist", "Geist Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  --leading-body: 1.5;
+  --leading-tight: 1.2;
+  --tracking-display: -0.02em;
+
+  /* ── space / shape ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 96px;
+  --section-y-tablet: 64px;
+  --section-y-phone: 48px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 1px 2px 0 color-mix(in oklab, var(--fg), transparent 92%), 0 1px 3px 0 color-mix(in oklab, var(--fg), transparent 88%);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --container-max: 1280px;
+  --container-gutter-desktop: 24px;
+  --container-gutter-tablet: 16px;
+  --container-gutter-phone: 16px;
+
+  /* ── 品牌扩展（本系统专属） ── */
+  --ink: #15233b;        /* 石墨深蓝：CTA 面板与 Hero 技术底座 */
+  --blue-soft: #eef4ff;  /* 选中/悬停浅蓝洗色 */
+  --slate-band: #f6f8fb; /* 银灰分区带 */
+}
+
+/* ── base ──────────────────────────────────────────────── */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+a, button { touch-action: manipulation; }
+[id] { scroll-margin-top: 92px; }
+p { text-wrap: pretty; }
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+/* ── type utilities ────────────────────────────────────── */
+.h1, h1 { font-size: clamp(44px, 5vw, 68px); line-height: 1.04; letter-spacing: var(--tracking-display); margin: 0; color: var(--ink); }
+.h2, h2 { font-size: clamp(30px, 3.4vw, var(--text-4xl)); line-height: 1.1; letter-spacing: var(--tracking-display); margin: 0; color: var(--ink); }
+.h3, h3 { font-size: var(--text-xl); line-height: 1.25; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+.lead { font-size: var(--text-lg); line-height: 1.65; color: var(--muted); max-width: 58ch; margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 var(--space-4); }
+.meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted); letter-spacing: 0.04em; }
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ── 组件样式（按钮 / 卡片 / 导航 / 表单 / 分区）完整实现
+   见 src/styles/globals.css；此处仅保留 token 与排版原语，
+   保证跨品牌切换时 schema 对齐。 ── */

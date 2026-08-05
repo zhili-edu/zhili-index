@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="执理科技标志">
+  <!-- 执·路径：Z 形三笔画连接两端，圆点代表被执持的技术端点与业务场景端点 -->
+  <path d="M7 13h25L16 35h25" fill="none" stroke="#2A5DB0" stroke-width="7"/>
+  <circle cx="41" cy="13" r="3.5" fill="#15233B"/>
+  <circle cx="7" cy="35" r="3.5" fill="#15233B"/>
+</svg>

@@ -1,23 +1,24 @@
 import { expect, test } from "@playwright/test";
 
-test("homepage navigation reaches cases page without contact route links", async ({ page }) => {
+test("首页可导航到案例页并查看真实项目", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("link", { name: "北京执理教育科技有限公司首页" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "青少年素质教育数字化区域服务商" })).toBeVisible();
-  await expect(page.getByText(/执理教育聚焦青少年科技教育/)).toBeVisible();
+  await expect(page.getByRole("link", { name: "执理科技首页" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "以科技连接教育、消费与城市运营场景" })).toBeVisible();
 
-  await expect(page.getByRole("link", { name: "联系我们" })).toHaveCount(0);
-  await expect(page.locator('a[href="/contact"]')).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "产品与平台" })).toHaveCount(0);
-  await expect(page.locator('a[href="/products"]')).toHaveCount(0);
-
-  await page
-    .getByRole("navigation", { name: "官网导航" })
-    .getByRole("link", { name: "案例成果" })
-    .click();
+  await page.getByRole("navigation", { name: "主导航" }).getByRole("link", { name: "案例成果" }).click();
 
   await expect(page).toHaveURL(/\/cases$/);
-  await expect(page.getByRole("heading", { name: "案例成果" })).toBeVisible();
-  await expect(page.getByText("区本课程研发建设")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "案例成果以真实项目类型呈现" })).toBeVisible();
+  await expect(page.getByText("滨海游船码头票务系统").first()).toBeVisible();
+});
+
+test("业务下拉可展开并进入教育科技页", async ({ page }) => {
+  await page.goto("/");
+
+  await page.getByRole("button", { name: "业务领域" }).click();
+  await page.getByRole("link", { name: "教育科技 AI 教育平台、课程体系、数据评价" }).click();
+
+  await expect(page).toHaveURL(/\/education-tech$/);
+  await expect(page.getByRole("heading", { name: "面向学校与区域的 AI 教育建设" })).toBeVisible();
 });

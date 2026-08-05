@@ -13,7 +13,7 @@
     "lint:oxlint": "oxlint .",
     "lint:fix": "oxlint . --fix",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "NODE_ENV=test vitest run",
     "test:e2e": "playwright test",
     "test:watch": "vitest",
     "oss": "ossutil sync -uf --delete ./out oss://zhili-index"

@@ -1,19 +1,52 @@
-import { Outlet, createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
 
+import AppShell from "./components/AppShell";
 import AboutPage from "./pages/AboutPage";
+import { ConsumerTechPage, EducationTechPage, OperationsServicePage } from "./pages/BusinessDetailPage";
+import BusinessPage from "./pages/BusinessPage";
 import CasesPage from "./pages/CasesPage";
+import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
-import PartnersPage from "./pages/PartnersPage";
 import SolutionsPage from "./pages/SolutionsPage";
 
 const rootRoute = createRootRoute({
-  component: Outlet,
+  component: AppShell,
 });
 
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: HomePage,
+});
+
+const aboutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/about",
+  component: AboutPage,
+});
+
+const businessRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/business",
+  component: BusinessPage,
+});
+
+const educationTechRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/education-tech",
+  component: EducationTechPage,
+});
+
+const consumerTechRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/consumer-tech",
+  component: ConsumerTechPage,
+});
+
+const operationsServiceRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/operations-service",
+  component: OperationsServicePage,
 });
 
 const solutionsRoute = createRoute({
@@ -28,24 +61,22 @@ const casesRoute = createRoute({
   component: CasesPage,
 });
 
-const partnersRoute = createRoute({
+const contactRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/partners",
-  component: PartnersPage,
-});
-
-const aboutRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/about",
-  component: AboutPage,
+  path: "/contact",
+  component: ContactPage,
 });
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  aboutRoute,
+  businessRoute,
+  educationTechRoute,
+  consumerTechRoute,
+  operationsServiceRoute,
   solutionsRoute,
   casesRoute,
-  partnersRoute,
-  aboutRoute,
+  contactRoute,
 ]);
 
 type RouterOptions = Parameters<typeof createRouter>[0];

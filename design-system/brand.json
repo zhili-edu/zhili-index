@@ -1,0 +1,72 @@
+{
+  "$schema": "open-design/brand-profile/v1",
+  "id": "zhili:official-site",
+  "name": "Zhili Design System",
+  "brand": "执理科技 Zhili Technology",
+  "category": "project",
+  "surface": "web",
+  "derivedFrom": {
+    "projectId": "0e7f8db7-086b-4d60-803a-c22bfc4162eb",
+    "projectName": "执理科技官网（9 页定稿静态站 → React 重构）",
+    "primaryEvidence": ["src/styles/globals.css", "src/content/site.ts", "src/components/AppShell.tsx"],
+    "provenance": "design-system/DESIGN.md"
+  },
+  "summary": "单一亮色主题的企业级系统：白底 + 银灰分区带交替，发丝线代替阴影，科技蓝 #2a5db0 为唯一强调色（每屏 ≤2 处），石墨深蓝 CTA 面板收尾；CJK 系统无衬线 + 等宽数据声部；咨询公司式信息结构；文案肯定句式、基于真实素材、禁编造指标。",
+  "themes": {
+    "default": "light",
+    "light": {
+      "label": "light · 咨询式企业风",
+      "selector": ":root",
+      "mood": "白底冷调 + 石墨墨色，发丝线分区，行式事实清单优先，深色 CTA 面板压轴",
+      "radiusContract": { "control": "6-8px", "card": "12px", "pill": "9999px" },
+      "container": "1280px",
+      "displayFont": "--font-display (Geist / PingFang SC / Hiragino Sans GB 系统栈, 层级由字号字重承担)"
+    }
+  },
+  "tokenRoles": [
+    { "token": "--bg", "role": "页面底色", "useFor": ["body 背景", "白色分区"], "neverFor": ["卡片填充区分（卡片同为白，用发丝线区分）"] },
+    { "token": "--slate-band", "role": "银灰分区带", "useFor": ["偶数 section 底", "制造分区节奏"], "neverFor": ["卡片内容背景"] },
+    { "token": "--surface", "role": "承载层", "useFor": ["卡片", "下拉菜单", "输入框底"], "neverFor": ["整页背景"] },
+    { "token": "--fg / --ink", "role": "石墨墨色", "useFor": ["标题", "正文", "深色 CTA 面板底", "Hero 技术底座"], "neverFor": ["大面积装饰填充"] },
+    { "token": "--muted", "role": "次级文字", "useFor": ["导语", "卡片描述", "页脚", "事实清单 dd"], "neverFor": ["hover 后的前景（禁止淡化文字）", "主标题"] },
+    { "token": "--border", "role": "发丝线", "useFor": ["卡片边", "分区接缝", "事实清单行间", "标签描边"], "neverFor": ["粗分隔线（>1px）"] },
+    { "token": "--accent", "role": "唯一强调色", "useFor": ["主 CTA", "eyebrow", "link-arrow", "focus 环", "事实清单 dt"], "neverFor": ["第二强调色", "大面积填充", "hover 前景降对比"] },
+    { "token": "--accent-on", "role": "强调色/深色底上的前景", "useFor": ["主按钮文字", "深色面板标题与正文"], "neverFor": ["浅色底上的文字"] },
+    { "token": "--blue-soft", "role": "浅蓝洗色", "useFor": ["选中 tab 底", "下拉悬停底", "soft-card"], "neverFor": ["正文背景"] },
+    { "token": "--success / --danger", "role": "表单语义", "useFor": ["成功态", "校验错误"], "neverFor": ["装饰"] }
+  ],
+  "voice": {
+    "language": "zh-CN",
+    "registers": ["企业陈述（首页/关于）", "咨询式结构（解决方案）", "工程化交付语言（案例/业务详情）", "邀请式行动（CTA/联系）"],
+    "rules": [
+      "一律肯定句式，禁『不是…也不是…』『避免…』式否定对比",
+      "文案基于真实素材，禁编造指标数字",
+      "数字必须可溯源并用等宽字体",
+      "联系邮箱固定 contact@zhili-edu.com"
+    ]
+  },
+  "flourish": "案例卡的单色抽象线稿（蓝 + 石墨 + 灰，320×180）与首页 Hero 的中台架构抽象图——全站唯一的装饰语汇",
+  "motion": {
+    "budget": "150–200ms, cubic-bezier(0.2,0,0,1)",
+    "reveal": "滚动渐显 opacity+translateY(12px)/520ms，IntersectionObserver，1.5s 强制显示兜底，prefers-reduced-motion 直接可见",
+    "micro": ["卡片 hover 抬升 2px", "按钮 active 下沉 1px", "箭头位移 2–3px"],
+    "forbidden": ["视差", "入场编排超过渐显一档", "hover 变色导致对比下降"]
+  },
+  "antiPatterns": [
+    "紫/蓝渐变洗底、霓虹光效、玻璃拟态堆叠",
+    "emoji 或手绘小人当功能图标",
+    "同一视口两个实心主按钮",
+    "彩色左边条 + 圆角卡的 AI 仪表板造型",
+    "hover 把文字变灰/变浅",
+    "无数据支撑的指标与口号堆叠",
+    "引入第二种强调色",
+    "卡片圆角超过 12px"
+  ],
+  "files": {
+    "tokens": "design-system/colors_and_type.css",
+    "spec": "design-system/DESIGN.md",
+    "skill": "design-system/SKILL.md",
+    "application": "src/styles/globals.css",
+    "content": "src/content/site.ts"
+  }
+}

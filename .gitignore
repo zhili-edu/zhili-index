@@ -21,3 +21,11 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# --- untracked source material (local reference only) ---
+1.pdf
+1.png
+参考.html
+/*.png
+data/typeless-dictionary.csv
+public/images/products/
